@@ -13,7 +13,7 @@ export const AppLayout: React.FC = () => {
   useRouteMotion(pageRef, location.pathname)
 
   return (
-    <div className="min-h-screen text-text flex overflow-x-hidden font-sans">
+    <div className="min-h-screen text-text flex overflow-x-clip font-sans">
       {/* Global Command Palette */}
       <CommandPalette />
 

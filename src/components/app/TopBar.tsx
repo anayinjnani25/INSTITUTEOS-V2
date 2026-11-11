@@ -90,7 +90,7 @@ export const TopBar: React.FC = () => {
     'glass-pill relative w-10 h-10 flex items-center justify-center text-text hover:text-text shrink-0'
 
   return (
-    <header className="sticky top-0 z-20 px-3 sm:px-5 md:px-8 pt-3 pb-2 select-none">
+    <header className="sticky top-0 z-20 px-3 sm:px-5 md:px-8 pt-3 pb-3 select-none before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:backdrop-blur-md before:[background:linear-gradient(to_bottom,var(--scene-top),transparent)] before:[mask-image:linear-gradient(to_bottom,black_40%,transparent)] before:opacity-80">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-2 sm:gap-3">
         {/* Left: Breadcrumbs */}
         <nav
