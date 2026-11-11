@@ -477,16 +477,16 @@ export const SessionLiveView: React.FC = () => {
       {/* Fullscreen QR Projector Modal */}
       {fullscreenQR && (
         <div
-          className="fixed inset-0 z-50 bg-[#33251F] flex flex-col items-center justify-center p-8 text-center text-[#F8F4EF] select-none"
+          className="fixed inset-0 z-50 bg-[#0F0D0C]/80 backdrop-blur-2xl animate-fade-in flex flex-col items-center justify-center p-8 text-center text-text select-none"
           onClick={() => setFullscreenQR(false)}
         >
           <div className="space-y-4 max-w-sm">
-            <h2 className="text-xl font-semibold tracking-tight text-[#F8F4EF]">Scan classroom check-in QR</h2>
-            <p className="text-xs text-[#E3D2C1]">
+            <h2 className="text-xl font-semibold tracking-tight text-text">Scan classroom check-in QR</h2>
+            <p className="text-xs text-text-muted">
               Java Full-Stack B3 (Kothrud) · CodeCraft Academy
             </p>
 
-            <div className="w-64 h-64 bg-white p-3 rounded-card mx-auto flex items-center justify-center shadow-dialog border border-[#D6B48A]">
+            <div className="w-64 h-64 bg-white p-3 rounded-card mx-auto flex items-center justify-center shadow-dialog border border-border">
               {qrDataUrl && (
                 <img
                   src={qrDataUrl}
@@ -496,10 +496,10 @@ export const SessionLiveView: React.FC = () => {
               )}
             </div>
 
-            <div className="text-xs font-mono text-[#E3D2C1]">
-              Rotates in {countdown}s · Demo Token: <span className="text-[#D6B48A] font-bold">{currentToken}</span>
+            <div className="text-xs font-mono text-text-muted">
+              Rotates in {countdown}s · Demo Token: <span className="text-accent font-bold">{currentToken}</span>
             </div>
-            <p className="text-[11px] text-[#CDB9A6]">Click anywhere to close</p>
+            <p className="text-[11px] text-text-muted">Click anywhere to close</p>
           </div>
         </div>
       )}

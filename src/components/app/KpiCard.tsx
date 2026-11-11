@@ -50,7 +50,7 @@ export const KpiCard: React.FC<KpiCardProps> = ({
     >
       <div className="flex items-start justify-between gap-2">
         {icon ? (
-          <div className="w-9 h-9 rounded-xl bg-surface-strong border border-border flex items-center justify-center text-text transition-transform duration-300 ease-spring group-hover:scale-110 [&_svg]:w-[18px] [&_svg]:h-[18px]">
+          <div className="w-9 h-9 rounded-2xl bg-surface-strong border border-border flex items-center justify-center text-text transition-transform duration-300 ease-spring group-hover:scale-110 [&_svg]:w-[18px] [&_svg]:h-[18px]">
             {icon}
           </div>
         ) : (

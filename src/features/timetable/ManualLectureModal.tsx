@@ -283,7 +283,7 @@ export const ManualLectureModal: React.FC<ManualLectureModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-border">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center text-accent">
+            <div className="w-8 h-8 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center text-accent">
               <PencilLine className="w-4 h-4" />
             </div>
             <div>
@@ -517,14 +517,14 @@ export const ManualLectureModal: React.FC<ManualLectureModalProps> = ({
 
           {/* LIVE CLASH WARNING (AI Heads-Up) */}
           {hasClashes && (
-            <div className="p-3.5 rounded-card border border-amber-500/40 bg-amber-500/10 text-xs text-[#1E140E] space-y-2 animate-in fade-in">
+            <div className="p-3.5 rounded-card border border-amber-500/40 bg-amber-500/10 text-xs text-text space-y-2 animate-in fade-in">
               <div className="flex items-start gap-2">
-                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <AlertTriangle className="w-4 h-4 text-warning shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-semibold text-amber-900">
+                  <div className="font-semibold text-warning">
                     Scheduling Clash Detected ({detectedClashes.length})
                   </div>
-                  <ul className="mt-1 space-y-1 text-amber-800 list-disc list-inside">
+                  <ul className="mt-1 space-y-1 text-warning list-disc list-inside">
                     {detectedClashes.map((c, i) => (
                       <li key={i}>{c.message}</li>
                     ))}
@@ -532,8 +532,8 @@ export const ManualLectureModal: React.FC<ManualLectureModalProps> = ({
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-amber-500/20 text-[11px] text-amber-900 flex items-center gap-1.5 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+              <div className="pt-2 border-t border-amber-500/20 text-[11px] text-warning flex items-center gap-1.5 font-medium">
+                <Sparkles className="w-3.5 h-3.5 text-warning shrink-0" />
                 <span>
                   No problem! You can still write and save this slot. The AI Clash Assistant can sort and resolve it automatically whenever you want.
                 </span>
@@ -554,7 +554,7 @@ export const ManualLectureModal: React.FC<ManualLectureModalProps> = ({
                 type="submit"
                 variant={hasClashes ? 'secondary' : 'primary'}
                 size="sm"
-                className={hasClashes ? 'border-amber-500/40 text-amber-900 bg-amber-500/20' : ''}
+                className={hasClashes ? 'border-amber-500/40 text-warning bg-amber-500/20' : ''}
               >
                 {hasClashes
                   ? 'Save Lecture (AI Will Sort)'

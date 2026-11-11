@@ -38,7 +38,7 @@ export const LoginView: React.FC = () => {
       email: 'student.new@gmail.com',
       role: 'student' as UserRole,
       badge: 'First-time Onboarding',
-      badgeColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+      badgeColor: 'bg-emerald-500/10 text-success border-emerald-500/20',
       avatar: '🎓',
       desc: 'Triggers basic info form (Name, Class, Branch, Roll No, Phone, Email) -> Head Approval Pending',
     },
@@ -48,7 +48,7 @@ export const LoginView: React.FC = () => {
       email: 'priya.nair@gmail.com',
       role: 'student' as UserRole,
       badge: 'Approved Student',
-      badgeColor: 'bg-blue-500/10 text-blue-700 border-blue-500/20',
+      badgeColor: 'bg-blue-500/10 text-info border-blue-500/20',
       avatar: '👩‍🎓',
       desc: 'Already approved student · Directly opens Student Dashboard',
     },
@@ -58,7 +58,7 @@ export const LoginView: React.FC = () => {
       email: 'arjun.mehta@codecraft.ac.in',
       role: 'trainer' as UserRole,
       badge: 'Academic Head / Trainer',
-      badgeColor: 'bg-amber-500/10 text-amber-700 border-amber-500/20',
+      badgeColor: 'bg-amber-500/10 text-warning border-amber-500/20',
       avatar: '👨‍🏫',
       desc: 'Head authorized to review and approve student admissions in Approvals',
     },
@@ -68,7 +68,7 @@ export const LoginView: React.FC = () => {
       email: 'rajesh@codecraft.ac.in',
       role: 'owner' as UserRole,
       badge: 'Institute Head / Owner',
-      badgeColor: 'bg-purple-500/10 text-purple-700 border-purple-500/20',
+      badgeColor: 'bg-purple-500/10 text-ai-chip border-purple-500/20',
       avatar: '👑',
       desc: 'Executive Head authorized to review and approve student admissions',
     },
@@ -88,7 +88,7 @@ export const LoginView: React.FC = () => {
       email: 'snehal@codecraft.ac.in',
       role: 'counselor' as UserRole,
       badge: 'Academic Counselor',
-      badgeColor: 'bg-rose-500/10 text-rose-700 border-rose-500/20',
+      badgeColor: 'bg-rose-500/10 text-danger border-rose-500/20',
       avatar: '🤝',
       desc: 'Student risk monitoring, academic counseling, and parent outreach',
     },
@@ -167,75 +167,75 @@ export const LoginView: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen grid grid-cols-1 md:grid-cols-12 bg-[#4A3528] text-[#F8F4EF] select-none font-sans">
+    <div className="min-h-screen grid grid-cols-1 md:grid-cols-12 text-text select-none font-sans">
       {/* Left Brand Panel (5 cols) */}
-      <div className="md:col-span-5 bg-[#33251F] border-r border-[#4F3B2E] p-8 md:p-12 flex flex-col justify-between text-[#F8F4EF]">
+      <div className="md:col-span-5 border-r border-border bg-black/10 backdrop-blur-sm p-8 md:p-12 flex flex-col justify-between text-text">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-control bg-[#4A3528] border border-[#6B5040] text-[#F8F4EF] font-medium text-xs flex items-center justify-center">
+          <div className="w-8 h-8 rounded-control bg-surface-strong border border-border text-text font-medium text-xs flex items-center justify-center">
             IO
           </div>
           <div className="flex flex-col">
-            <span className="font-semibold text-sm text-[#F8F4EF] leading-tight">Institute OS</span>
-            <span className="text-[11px] text-[#E3D2C1]">CodeCraft Academy · Enterprise</span>
+            <span className="font-semibold text-sm text-text leading-tight">Institute OS</span>
+            <span className="text-[11px] text-text-muted">CodeCraft Academy · Enterprise</span>
           </div>
         </div>
 
         <div className="space-y-6 my-auto max-w-sm">
           <div>
-            <div className="text-xs text-[#E3D2C1] uppercase tracking-wider font-normal">
+            <div className="text-xs text-text-muted uppercase tracking-wider font-normal">
               Student & Faculty Platform
             </div>
-            <h1 className="text-2xl font-semibold text-[#F8F4EF] tracking-tight mt-2 leading-snug">
+            <h1 className="text-2xl font-semibold text-text tracking-tight mt-2 leading-snug">
               Unified classroom learning, attendance, and student governance.
             </h1>
           </div>
 
-          <div className="space-y-3.5 text-xs text-[#E3D2C1]">
+          <div className="space-y-3.5 text-xs text-text-muted">
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#D6B48A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
-                <span className="font-medium text-[#F8F4EF]">Single Sign-On with Google: </span>
+                <span className="font-medium text-text">Single Sign-On with Google: </span>
                 Instant authentication with your verified institutional or personal Google account.
               </div>
             </div>
 
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#D6B48A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
-                <span className="font-medium text-[#F8F4EF]">Head Admission Approval: </span>
+                <span className="font-medium text-text">Head Admission Approval: </span>
                 First-time student registrations are routed to institute heads (Trainer or Owner) for authorization.
               </div>
             </div>
 
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#D6B48A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
-                <span className="font-medium text-[#F8F4EF]">Zero-reprompt onboarding: </span>
+                <span className="font-medium text-text">Zero-reprompt onboarding: </span>
                 Fill your student admission profile once. Never asked again on subsequent logins.
               </div>
             </div>
           </div>
         </div>
 
-        <div className="text-xs text-[#E3D2C1] flex items-center gap-2">
+        <div className="text-xs text-text-muted flex items-center gap-2">
           <Building2 className="w-3.5 h-3.5" />
           <span>CodeCraft Academy · Pune Campuses (Kothrud & Baner)</span>
         </div>
       </div>
 
       {/* Right Login Panel (7 cols) - STRICTLY ONLY "CONTINUE WITH GOOGLE" */}
-      <div className="md:col-span-7 p-6 sm:p-10 md:p-16 flex items-center justify-center bg-[#F6E3D1] text-[#1E140E]">
+      <div className="md:col-span-7 p-6 sm:p-10 md:p-16 flex items-center justify-center text-text">
         <div className="w-full max-w-md space-y-8 text-center sm:text-left">
           {/* Header */}
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8D4C1] border border-[#DDBF9F] text-xs font-medium text-[#5C4636]">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#4A3528]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-sunken border border-border text-xs font-medium text-text-muted">
+              <ShieldCheck className="w-3.5 h-3.5 text-text" />
               <span>Secure Institute Authentication</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1E140E]">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text">
               Sign in to CodeCraft
             </h2>
-            <p className="text-xs text-[#5C4636] leading-relaxed max-w-sm">
+            <p className="text-xs text-text-muted leading-relaxed max-w-sm">
               Access your student portal, lecture schedules, QR check-in, and course materials.
             </p>
           </div>
@@ -246,7 +246,7 @@ export const LoginView: React.FC = () => {
               type="button"
               onClick={handleGoogleClick}
               disabled={isLoading}
-              className="w-full group bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-300 hover:border-slate-400 font-medium text-sm py-3 px-4 rounded-xl shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-center gap-3 cursor-pointer select-none"
+              className="w-full group bg-white hover:bg-surface-strong active:bg-surface-strong text-text hover:text-text border border-border hover:border-border font-medium text-sm py-3 px-4 rounded-2xl shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-center gap-3 cursor-pointer select-none"
             >
               {/* Official Google G Logo */}
               <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
@@ -267,24 +267,24 @@ export const LoginView: React.FC = () => {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                 />
               </svg>
-              <span className="font-semibold text-slate-800 text-[14px]">
+              <span className="font-semibold text-text text-[14px]">
                 {isLoading ? 'Connecting to Google...' : 'Continue with Google'}
               </span>
             </button>
 
             <div className="pt-2 text-center">
-              <p className="text-[11px] text-[#7C5E48]">
+              <p className="text-[11px] text-text-muted">
                 Protected by Google Identity & CodeCraft Academy RBAC policies.
               </p>
             </div>
 
             {/* Demo Accounts (Instant 1-Click Access Without Approval) */}
-            <div className="pt-4 border-t border-[#DDBF9F] space-y-2.5">
+            <div className="pt-4 border-t border-border space-y-2.5">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-[#1E140E]">
+                <span className="font-semibold text-text">
                   Demo Accounts (Instant access without approval):
                 </span>
-                <span className="text-[10px] text-emerald-800 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
+                <span className="text-[10px] text-success bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
                   Pre-approved
                 </span>
               </div>
@@ -301,12 +301,12 @@ export const LoginView: React.FC = () => {
                       approvalStatus: 'approved',
                     })
                   }
-                  className="p-2.5 rounded-xl bg-white/80 hover:bg-white border border-[#DDBF9F] hover:border-[#4A3528] shadow-2xs hover:shadow-xs text-left transition-all group cursor-pointer"
+                  className="p-2.5 rounded-2xl bg-surface-sunken hover:bg-surface-strong border border-border hover:border-border-strong hover:-translate-y-0.5 text-left transition-all group cursor-pointer"
                 >
-                  <div className="font-semibold text-[#1E140E] group-hover:text-[#4A3528] flex items-center gap-1.5">
+                  <div className="font-semibold text-text group-hover:text-accent flex items-center gap-1.5">
                     <span>👑 Rajesh (Owner)</span>
                   </div>
-                  <div className="text-[10px] text-[#5C4636] mt-0.5 truncate font-mono">
+                  <div className="text-[10px] text-text-muted mt-0.5 truncate font-mono">
                     rajesh@codecraft.ac.in
                   </div>
                 </button>
@@ -322,12 +322,12 @@ export const LoginView: React.FC = () => {
                       approvalStatus: 'approved',
                     })
                   }
-                  className="p-2.5 rounded-xl bg-white/80 hover:bg-white border border-[#DDBF9F] hover:border-[#4A3528] shadow-2xs hover:shadow-xs text-left transition-all group cursor-pointer"
+                  className="p-2.5 rounded-2xl bg-surface-sunken hover:bg-surface-strong border border-border hover:border-border-strong hover:-translate-y-0.5 text-left transition-all group cursor-pointer"
                 >
-                  <div className="font-semibold text-[#1E140E] group-hover:text-[#4A3528] flex items-center gap-1.5">
+                  <div className="font-semibold text-text group-hover:text-accent flex items-center gap-1.5">
                     <span>👨‍🏫 Arjun (Trainer / Head)</span>
                   </div>
-                  <div className="text-[10px] text-[#5C4636] mt-0.5 truncate font-mono">
+                  <div className="text-[10px] text-text-muted mt-0.5 truncate font-mono">
                     arjun.mehta@codecraft.ac.in
                   </div>
                 </button>
@@ -343,12 +343,12 @@ export const LoginView: React.FC = () => {
                       approvalStatus: 'approved',
                     })
                   }
-                  className="p-2.5 rounded-xl bg-white/80 hover:bg-white border border-[#DDBF9F] hover:border-[#4A3528] shadow-2xs hover:shadow-xs text-left transition-all group cursor-pointer"
+                  className="p-2.5 rounded-2xl bg-surface-sunken hover:bg-surface-strong border border-border hover:border-border-strong hover:-translate-y-0.5 text-left transition-all group cursor-pointer"
                 >
-                  <div className="font-semibold text-[#1E140E] group-hover:text-[#4A3528] flex items-center gap-1.5">
+                  <div className="font-semibold text-text group-hover:text-accent flex items-center gap-1.5">
                     <span>👩‍🎓 Priya (Student)</span>
                   </div>
-                  <div className="text-[10px] text-[#5C4636] mt-0.5 truncate font-mono">
+                  <div className="text-[10px] text-text-muted mt-0.5 truncate font-mono">
                     priya.nair@gmail.com
                   </div>
                 </button>
@@ -364,12 +364,12 @@ export const LoginView: React.FC = () => {
                       approvalStatus: 'approved',
                     })
                   }
-                  className="p-2.5 rounded-xl bg-white/80 hover:bg-white border border-[#DDBF9F] hover:border-[#4A3528] shadow-2xs hover:shadow-xs text-left transition-all group cursor-pointer"
+                  className="p-2.5 rounded-2xl bg-surface-sunken hover:bg-surface-strong border border-border hover:border-border-strong hover:-translate-y-0.5 text-left transition-all group cursor-pointer"
                 >
-                  <div className="font-semibold text-[#1E140E] group-hover:text-[#4A3528] flex items-center gap-1.5">
+                  <div className="font-semibold text-text group-hover:text-accent flex items-center gap-1.5">
                     <span>💼 Sunita (Accounts)</span>
                   </div>
-                  <div className="text-[10px] text-[#5C4636] mt-0.5 truncate font-mono">
+                  <div className="text-[10px] text-text-muted mt-0.5 truncate font-mono">
                     accounts@codecraft.ac.in
                   </div>
                 </button>
@@ -378,9 +378,9 @@ export const LoginView: React.FC = () => {
           </div>
 
           {/* Security Guarantee Box */}
-          <div className="p-4 rounded-xl bg-[#EFE3D5] border border-[#DDBF9F] space-y-2 text-xs text-[#5C4636]">
-            <div className="flex items-center gap-2 font-medium text-[#1E140E]">
-              <Lock className="w-3.5 h-3.5 text-[#5C4636]" />
+          <div className="p-4 rounded-2xl bg-surface-sunken border border-border space-y-2 text-xs text-text-muted">
+            <div className="flex items-center gap-2 font-medium text-text">
+              <Lock className="w-3.5 h-3.5 text-text-muted" />
               <span>Admission Verification Workflow</span>
             </div>
             <p className="text-[11px] leading-relaxed">
@@ -395,9 +395,9 @@ export const LoginView: React.FC = () => {
       {/* Google Account Selector Dialog (Modal) */}
       {showAccountModal && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden text-slate-900 animate-in fade-in zoom-in-95 duration-150">
+          <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-border overflow-hidden text-text animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
-            <div className="p-5 border-b border-slate-100 flex items-center justify-between">
+            <div className="p-5 border-b border-border flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                   <path
@@ -418,10 +418,10 @@ export const LoginView: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold text-sm text-slate-900 leading-tight">
+                  <h3 className="font-semibold text-sm text-text leading-tight">
                     Choose an account
                   </h3>
-                  <p className="text-[11px] text-slate-500">to continue to CodeCraft Academy</p>
+                  <p className="text-[11px] text-text-muted">to continue to CodeCraft Academy</p>
                 </div>
               </div>
               <button
@@ -430,7 +430,7 @@ export const LoginView: React.FC = () => {
                   setShowAccountModal(false)
                   setIsCustomAccount(false)
                 }}
-                className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+                className="p-1 rounded-full text-text-muted hover:text-text-muted hover:bg-slate-100 transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -439,7 +439,7 @@ export const LoginView: React.FC = () => {
             {/* Account List */}
             {!isCustomAccount ? (
               <div className="p-3 space-y-1.5 max-h-[65vh] overflow-y-auto">
-                <div className="px-3 py-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                <div className="px-3 py-1 text-[11px] font-semibold text-text-muted uppercase tracking-wider">
                   Select Google Account:
                 </div>
 
@@ -448,14 +448,14 @@ export const LoginView: React.FC = () => {
                     key={acc.id}
                     type="button"
                     onClick={() => handleSelectAccount(acc)}
-                    className="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all flex items-start gap-3 group cursor-pointer"
+                    className="w-full text-left p-3 rounded-2xl hover:bg-surface-strong border border-transparent hover:border-border transition-all flex items-start gap-3 group cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-full bg-surface-sunken border border-border flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
                       {acc.avatar}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-semibold text-sm text-slate-900 truncate">
+                        <span className="font-semibold text-sm text-text truncate">
                           {acc.name}
                         </span>
                         <span
@@ -464,8 +464,8 @@ export const LoginView: React.FC = () => {
                           {acc.badge}
                         </span>
                       </div>
-                      <div className="text-xs text-slate-500 font-mono truncate">{acc.email}</div>
-                      <div className="text-[11px] text-slate-400 mt-1 leading-tight">{acc.desc}</div>
+                      <div className="text-xs text-text-muted font-mono truncate">{acc.email}</div>
+                      <div className="text-[11px] text-text-muted mt-1 leading-tight">{acc.desc}</div>
                     </div>
                   </button>
                 ))}
@@ -474,16 +474,16 @@ export const LoginView: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsCustomAccount(true)}
-                  className="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-dashed border-slate-300 hover:border-slate-400 transition-all flex items-center gap-3 cursor-pointer mt-2"
+                  className="w-full text-left p-3 rounded-2xl hover:bg-surface-strong border border-dashed border-border hover:border-border transition-all flex items-center gap-3 cursor-pointer mt-2"
                 >
-                  <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500">
+                  <div className="w-10 h-10 rounded-full bg-surface-sunken border border-border flex items-center justify-center text-text-muted">
                     <Plus className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="font-semibold text-xs text-slate-800">
+                    <div className="font-semibold text-xs text-text">
                       Use another Google account
                     </div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="text-[11px] text-text-muted">
                       Enter any custom name and @gmail.com to test new student admission
                     </div>
                   </div>
@@ -492,31 +492,31 @@ export const LoginView: React.FC = () => {
             ) : (
               /* Custom Account Form */
               <form onSubmit={handleCustomSubmit} className="p-5 space-y-4">
-                <div className="text-xs text-slate-600">
+                <div className="text-xs text-text-muted">
                   Enter your Google account details to sign in as a student:
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-medium text-slate-700">Full Name</label>
+                  <label className="text-xs font-medium text-text">Full Name</label>
                   <input
                     type="text"
                     placeholder="e.g. Rahul Sharma"
                     value={customName}
                     onChange={(e) => setCustomName(e.target.value)}
                     required
-                    className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900 outline-none focus:border-blue-500 focus:bg-white"
+                    className="w-full bg-surface-sunken border border-border rounded-2xl p-2.5 text-xs text-text outline-none focus:border-accent focus:bg-surface-strong"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-medium text-slate-700">Google Email</label>
+                  <label className="text-xs font-medium text-text">Google Email</label>
                   <input
                     type="email"
                     placeholder="rahul.sharma@gmail.com"
                     value={customEmail}
                     onChange={(e) => setCustomEmail(e.target.value)}
                     required
-                    className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900 outline-none focus:border-blue-500 focus:bg-white font-mono"
+                    className="w-full bg-surface-sunken border border-border rounded-2xl p-2.5 text-xs text-text outline-none focus:border-accent focus:bg-surface-strong font-mono"
                   />
                 </div>
 
@@ -524,13 +524,13 @@ export const LoginView: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setIsCustomAccount(false)}
-                    className="px-3 py-2 text-xs font-medium text-slate-600 hover:text-slate-900"
+                    className="px-3 py-2 text-xs font-medium text-text-muted hover:text-text"
                   >
                     Back
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm"
+                    className="px-4 py-2 bg-accent hover:brightness-110 text-white font-semibold text-xs rounded-2xl shadow-sm"
                   >
                     Continue with this account
                   </button>
@@ -538,7 +538,7 @@ export const LoginView: React.FC = () => {
               </form>
             )}
 
-            <div className="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 text-center">
+            <div className="p-3 bg-surface-sunken border-t border-border text-[11px] text-text-muted text-center">
               Google Single Sign-On · CodeCraft Academy Security Gateway
             </div>
           </div>

@@ -1242,7 +1242,7 @@ export const StudentPortalView: React.FC = () => {
             </div>
 
             {/* Video Player */}
-            <div className="relative w-full aspect-video bg-[#33251F] rounded overflow-hidden">
+            <div className="relative w-full aspect-video bg-black/40 rounded overflow-hidden">
               <video
                 src={activeVideo.url}
                 controls
