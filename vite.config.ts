@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_PAGES ? '/INSTITUTEOS-V2/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
