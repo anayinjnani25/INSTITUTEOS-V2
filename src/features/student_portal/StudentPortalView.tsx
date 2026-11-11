@@ -327,33 +327,33 @@ export const StudentPortalView: React.FC = () => {
         </div>
 
         {/* Desktop Horizontal Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-border text-xs font-normal overflow-x-auto">
+        <div className="flex items-center gap-0.5 glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none] text-xs font-normal overflow-x-auto">
           <button
             onClick={() => setActiveTab('today')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'today'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             Today & overview
           </button>
           <button
             onClick={() => setActiveTab('schedule')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'schedule'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             Weekly schedule
           </button>
           <button
             onClick={() => setActiveTab('classes')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap flex items-center gap-1.5 ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeTab === 'classes'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             <School className="w-3.5 h-3.5" />
@@ -361,30 +361,30 @@ export const StudentPortalView: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveTab('recordings')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'recordings'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             Recorded lectures & catch-up
           </button>
           <button
             onClick={() => setActiveTab('fees')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'fees'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             Fees & receipts
           </button>
           <button
             onClick={() => setActiveTab('certificate')}
-            className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+            className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'certificate'
-                ? 'border-accent text-accent font-medium'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
             Credential & certificate

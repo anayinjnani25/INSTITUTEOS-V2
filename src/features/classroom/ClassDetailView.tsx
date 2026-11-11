@@ -455,14 +455,14 @@ export const ClassDetailView: React.FC = () => {
       </div>
 
       {/* Sub-nav Tabs */}
-      <div className="flex items-center gap-1 border-b border-border text-xs font-medium overflow-x-auto">
+      <div className="flex items-center gap-0.5 glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none] text-xs font-medium overflow-x-auto">
         <button
           onClick={() => setActiveTab('stream')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'stream'
-              ? 'border-accent text-accent font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Stream
@@ -470,10 +470,10 @@ export const ClassDetailView: React.FC = () => {
         <button
           onClick={() => setActiveTab('notes')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'notes'
-              ? 'border-accent text-accent font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Notes ({classNotes.length})
@@ -481,10 +481,10 @@ export const ClassDetailView: React.FC = () => {
         <button
           onClick={() => setActiveTab('assignments')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'assignments'
-              ? 'border-accent text-accent font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Assignments ({classAssignments.length})
@@ -492,10 +492,10 @@ export const ClassDetailView: React.FC = () => {
         <button
           onClick={() => setActiveTab('people')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'people'
-              ? 'border-accent text-accent font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           People ({classStudents.length})
@@ -504,10 +504,10 @@ export const ClassDetailView: React.FC = () => {
           <button
             onClick={() => setActiveTab('grades')}
             className={cn(
-              'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+              'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
               activeTab === 'grades'
-                ? 'border-accent text-accent font-semibold'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
             Grades

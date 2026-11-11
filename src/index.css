@@ -20,13 +20,13 @@
 
     /* Glass */
     --glass-blur: 26px;
-    --glass-saturate: 150%;
+    --glass-saturate: 125%;
   }
 
   /* ---------- LIGHT · "Daylight" ---------- */
   :root {
     --canvas: transparent;
-    --surface: rgba(255, 255, 255, 0.58);
+    --surface: rgba(255, 255, 255, 0.64);
     --surface-sunken: rgba(20, 18, 16, 0.045);
     --surface-strong: rgba(20, 18, 16, 0.08);
     --surface-solid: rgba(250, 248, 245, 0.9);
@@ -87,7 +87,7 @@
 
   /* ---------- DARK · "Dusk" (default) ---------- */
   .dark {
-    --surface: rgba(34, 30, 28, 0.42);
+    --surface: rgba(32, 29, 28, 0.56);
     --surface-sunken: rgba(255, 255, 255, 0.05);
     --surface-strong: rgba(255, 255, 255, 0.1);
     --surface-solid: rgba(28, 25, 24, 0.86);
@@ -141,7 +141,7 @@
     --scene-floor: #2A1E18;
     --scene-glow: rgba(255, 160, 90, 0.5);
     --scene-glow-2: rgba(255, 110, 80, 0.2);
-    --scene-mullion: rgba(12, 9, 8, 0.42);
+    --scene-mullion: rgba(12, 9, 8, 0.34);
     --scene-vignette: rgba(0, 0, 0, 0.45);
   }
 

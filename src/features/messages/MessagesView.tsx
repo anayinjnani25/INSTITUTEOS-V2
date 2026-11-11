@@ -155,14 +155,14 @@ export const MessagesView: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 border-b border-border text-xs font-medium">
+      <div className="flex items-center gap-0.5 glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none] text-xs font-medium">
         <button
           onClick={() => setActiveTab('outbox')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors',
             activeTab === 'outbox'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Outbox ({outbox.length})
@@ -170,10 +170,10 @@ export const MessagesView: React.FC = () => {
         <button
           onClick={() => setActiveTab('templates')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors',
             activeTab === 'templates'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Notification templates ({templates.length})

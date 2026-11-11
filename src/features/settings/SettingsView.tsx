@@ -96,53 +96,53 @@ export const SettingsView: React.FC = () => {
       </div>
 
       {/* Sub-nav tabs */}
-      <div className="flex items-center gap-2 border-b border-border text-xs font-normal overflow-x-auto">
+      <div className="flex items-center gap-0.5 glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none] text-xs font-normal overflow-x-auto">
         <button
           onClick={() => setActiveSubTab('attendance_rules')}
-          className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+          className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'attendance_rules'
-              ? 'border-accent text-accent font-medium'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
           Attendance rules
         </button>
         <button
           onClick={() => setActiveSubTab('fees_rules')}
-          className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+          className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'fees_rules'
-              ? 'border-accent text-accent font-medium'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
           Fees & EMI governance
         </button>
         <button
           onClick={() => setActiveSubTab('permissions')}
-          className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+          className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'permissions'
-              ? 'border-accent text-accent font-medium'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
           Roles & permissions
         </button>
         <button
           onClick={() => setActiveSubTab('governance')}
-          className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+          className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'governance'
-              ? 'border-accent text-accent font-medium'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
           Data & model governance
         </button>
         <button
           onClick={() => setActiveSubTab('notifications')}
-          className={`py-2 px-3 border-b-2 transition-colors whitespace-nowrap ${
+          className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'notifications'
-              ? 'border-accent text-accent font-medium'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
           Quiet hours & channels

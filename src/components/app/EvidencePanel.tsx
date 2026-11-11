@@ -66,14 +66,14 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center border-b border-border px-2 bg-surface text-xs font-medium">
+      <div className="flex items-center glass-pill !rounded-full p-1 m-2 w-fit max-w-full [scrollbar-width:none] text-xs font-medium">
         <button
           onClick={() => setActiveTab('sql')}
           className={cn(
-            'flex items-center gap-1.5 py-2 px-2.5 border-b-2 transition-colors text-xs',
+            'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'sql'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           <Code2 className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -83,10 +83,10 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
         <button
           onClick={() => setActiveTab('sources')}
           className={cn(
-            'flex items-center gap-1.5 py-2 px-2.5 border-b-2 transition-colors text-xs',
+            'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'sources'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           <Database className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -96,10 +96,10 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
         <button
           onClick={() => setActiveTab('filters')}
           className={cn(
-            'flex items-center gap-1.5 py-2 px-2.5 border-b-2 transition-colors text-xs',
+            'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'filters'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           <Filter className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -109,10 +109,10 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
         <button
           onClick={() => setActiveTab('safety')}
           className={cn(
-            'flex items-center gap-1.5 py-2 px-2.5 border-b-2 transition-colors text-xs',
+            'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'safety'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           <ShieldCheck className="w-3.5 h-3.5" strokeWidth={1.5} />

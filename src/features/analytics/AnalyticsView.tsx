@@ -118,15 +118,15 @@ GROUP BY r.id, r.room_number;`,
       </div>
 
       {/* Report Switcher Tabs */}
-      <div className="flex items-center gap-1 border-b border-border text-xs font-medium overflow-x-auto">
+      <div className="flex items-center gap-0.5 glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none] text-xs font-medium overflow-x-auto">
         {role !== 'trainer' && (
           <button
             onClick={() => setActiveReport('collections')}
             className={cn(
-              'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+              'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
               activeReport === 'collections'
-                ? 'border-accent text-text font-semibold'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
             Collections trend
@@ -135,10 +135,10 @@ GROUP BY r.id, r.room_number;`,
         <button
           onClick={() => setActiveReport('attendance')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeReport === 'attendance'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Cohort attendance
@@ -146,10 +146,10 @@ GROUP BY r.id, r.room_number;`,
         <button
           onClick={() => setActiveReport('trainer_load')}
           className={cn(
-            'py-2 px-3 border-b-2 transition-colors whitespace-nowrap',
+            'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeReport === 'trainer_load'
-              ? 'border-accent text-text font-semibold'
-              : 'border-transparent text-text-muted hover:text-text'
+              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
           Trainer workload

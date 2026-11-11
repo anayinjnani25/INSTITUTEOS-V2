@@ -209,15 +209,15 @@ export const StudentsView: React.FC = () => {
       </div>
 
       {/* Saved Views as Tabs */}
-      <div className="flex items-center justify-between border-b border-border">
+      <div className="flex items-center justify-between glass-pill !rounded-full p-1 w-fit max-w-full [scrollbar-width:none]">
         <div className="flex items-center gap-1 text-xs">
           <button
             onClick={() => setActiveTab('all')}
             className={cn(
-              'py-2 px-3 border-b-2 font-medium transition-colors',
+              'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'all'
-                ? 'border-accent text-text font-semibold'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
             All students ({students.length})
@@ -225,10 +225,10 @@ export const StudentsView: React.FC = () => {
           <button
             onClick={() => setActiveTab('active')}
             className={cn(
-              'py-2 px-3 border-b-2 font-medium transition-colors',
+              'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'active'
-                ? 'border-accent text-text font-semibold'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
             Active
@@ -236,10 +236,10 @@ export const StudentsView: React.FC = () => {
           <button
             onClick={() => setActiveTab('at_risk')}
             className={cn(
-              'py-2 px-3 border-b-2 font-medium transition-colors',
+              'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'at_risk'
-                ? 'border-accent text-text font-semibold'
-                : 'border-transparent text-text-muted hover:text-text'
+                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
             At risk ({students.filter((s) => s.riskLevel !== 'low').length})
@@ -248,10 +248,10 @@ export const StudentsView: React.FC = () => {
             <button
               onClick={() => setActiveTab('overdue')}
               className={cn(
-                'py-2 px-3 border-b-2 font-medium transition-colors',
+                'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
                 activeTab === 'overdue'
-                  ? 'border-accent text-text font-semibold'
-                  : 'border-transparent text-text-muted hover:text-text'
+                  ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                  : 'text-text-muted hover:text-text hover:bg-surface-strong'
               )}
             >
               Overdue fees ({students.filter((s) => s.feeStatus === 'overdue').length})
