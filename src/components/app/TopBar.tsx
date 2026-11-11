@@ -59,7 +59,7 @@ export const TopBar: React.FC = () => {
     'glass-pill relative w-11 h-11 flex items-center justify-center text-text shrink-0'
 
   return (
-    <header className="sticky top-0 z-30 select-none before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:[background:linear-gradient(to_bottom,var(--bg-base),transparent)] before:opacity-70">
+    <header className="relative md:sticky md:top-0 z-30 select-none before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:backdrop-blur-md before:[mask-image:linear-gradient(to_bottom,black_55%,transparent)] before:[background:linear-gradient(to_bottom,var(--bg-base),transparent)] before:opacity-90">
       <div className="max-w-[1840px] mx-auto px-[var(--gut)] md:pl-[calc(var(--side-w)+var(--gut))] pt-[18px] pb-3">
         <div className="flex items-center justify-between gap-3">
           {/* Brand */}
