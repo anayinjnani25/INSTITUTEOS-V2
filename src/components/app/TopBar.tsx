@@ -95,7 +95,7 @@ export const TopBar: React.FC = () => {
         {/* Left: Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
-          className="glass-pill h-10 pl-1.5 pr-4 flex items-center gap-1.5 text-[13px] min-w-0"
+          className="glass-pill h-10 pl-1.5 pr-4 hidden sm:flex items-center gap-1.5 text-[13px] min-w-0"
         >
           <Link
             to="/"
@@ -144,7 +144,7 @@ export const TopBar: React.FC = () => {
         </div>
 
         {/* Right Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto">
           {!isSupabaseConfigured && (
             <span className="hidden xl:inline-flex items-center gap-1.5 h-7 px-2.5 rounded-full text-[10.5px] font-medium bg-warning/15 text-warning border border-warning/25">
               <span className="w-1.5 h-1.5 rounded-full bg-warning animate-[pulse_2s_ease-in-out_infinite]" />
@@ -229,7 +229,7 @@ export const TopBar: React.FC = () => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className={cn(iconBtn, 'hidden sm:flex')}
+            className={iconBtn}
             title={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
             aria-label="Toggle theme"
           >
