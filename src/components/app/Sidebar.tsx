@@ -62,6 +62,12 @@ export const Sidebar: React.FC = () => {
     localStorage.setItem('batchwise-sidebar-collapsed', String(collapsed))
   }, [collapsed])
 
+  // Presentation-only: floating tooltip position for the icon dock
+  const [tip, setTip] = useState<{ label: string; top: number; left: number } | null>(null)
+  useEffect(() => {
+    setTip(null)
+  }, [location.pathname, collapsed])
+
   // Exact requested groups and order:
   // Today, Operations, People, Academics, Money, Reports, Admin
   const navGroups: NavGroup[] = [
@@ -230,55 +236,84 @@ export const Sidebar: React.FC = () => {
     }))
     .filter((grp) => grp.items.length > 0)
 
+  const displayName =
+    role === 'trainer'
+      ? 'Arjun Mehta'
+      : role === 'counselor'
+      ? 'Snehal Kulkarni'
+      : role === 'accounts'
+      ? 'Sunita Accounts'
+      : 'Rajesh Sharma'
+
+  const showTip = (label: string, e: React.MouseEvent<HTMLElement>) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    setTip({ label, top: r.top + r.height / 2, left: r.right + 12 })
+  }
+  const hideTip = () => setTip(null)
+
   return (
     <aside
       className={cn(
-        'h-screen bg-[#F6E3D1] border-r border-[#D6B48A] flex flex-col justify-between transition-all select-none z-30 shrink-0 sticky top-0 text-[#1F1F1F]',
-        collapsed ? 'w-14' : 'w-[240px]'
+        'sticky top-0 h-screen shrink-0 z-30 select-none flex py-3 pl-2 sm:pl-3 md:pl-4',
+        collapsed ? 'items-center' : 'items-stretch'
       )}
     >
-      {/* Top Header */}
-      <div>
-        <div className="h-[52px] px-3 border-b border-[#DDBF9F] flex items-center justify-between">
-          {!collapsed ? (
-            <div className="flex items-center gap-2 min-w-0">
-              <div className="w-6 h-6 rounded-control bg-[#EBCDB1] border border-[#DDBF9F] flex items-center justify-center text-[#1F1F1F] font-medium text-xs shrink-0">
-                IO
-              </div>
-              <div className="min-w-0">
-                <div className="font-medium text-xs text-[#1F1F1F] truncate">
-                  CodeCraft Academy
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="w-6 h-6 rounded-control bg-[#EBCDB1] border border-[#DDBF9F] flex items-center justify-center text-[#1F1F1F] font-medium text-xs mx-auto">
+      <div
+        className={cn(
+          'glass rounded-[28px] flex flex-col overflow-hidden transition-[width] duration-sheet ease-out',
+          collapsed ? 'w-[60px] max-h-full' : 'w-[60px] md:w-[236px] h-full'
+        )}
+      >
+        {/* Brand + collapse toggle */}
+        <div
+          className={cn(
+            'flex items-center gap-2 shrink-0 pt-2.5 pb-2',
+            collapsed ? 'flex-col px-2' : 'flex-col md:flex-row px-2 md:pl-3 md:pr-2.5 md:justify-between'
+          )}
+        >
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB36B] to-[#F2763A] text-white font-semibold text-xs flex items-center justify-center shrink-0 shadow-[0_6px_16px_-6px_rgba(242,118,58,0.7),inset_0_1px_0_rgba(255,255,255,0.35)]">
               IO
             </div>
-          )}
+            {!collapsed && (
+              <div className="min-w-0 hidden md:block">
+                <div className="font-semibold text-[13px] text-text truncate leading-tight">CodeCraft Academy</div>
+                <div className="text-[11px] text-text-muted truncate">Institute OS</div>
+              </div>
+            )}
+          </div>
 
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="p-1 text-[#5C4636] hover:text-[#1F1F1F] hover:bg-[#EBCDB1] rounded-control transition-colors shrink-0"
+            onMouseEnter={(e) => collapsed && showTip('Expand sidebar', e)}
+            onMouseLeave={hideTip}
+            className={cn(
+              'w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text hover:bg-surface-strong shrink-0 hidden md:flex'
+            )}
             title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             {collapsed ? (
-              <ChevronRight className="w-4 h-4" strokeWidth={1.5} />
+              <ChevronRight className="w-4 h-4" strokeWidth={1.75} />
             ) : (
-              <ChevronLeft className="w-4 h-4" strokeWidth={1.5} />
+              <ChevronLeft className="w-4 h-4" strokeWidth={1.75} />
             )}
           </button>
         </div>
 
-        {/* Scrollable Navigation List with Scroll Shadow */}
-        <nav className="p-2 space-y-3.5 overflow-y-auto max-h-[calc(100vh-120px)] scroll-shadow-y">
+        <div className="mx-3 h-px bg-border shrink-0" />
+
+        {/* Navigation */}
+        <nav className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-2 py-2.5 space-y-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {filteredGroups.map((grp, gIdx) => (
-            <div key={gIdx} className="space-y-0.5">
+            <div key={gIdx} className="space-y-1">
               {grp.title && !collapsed && (
-                <div className="px-2 py-1 text-[11px] font-medium text-[#8A705E]">
+                <div className="hidden md:block px-3 pt-1 pb-0.5 text-[10.5px] font-medium uppercase tracking-[0.08em] text-text-muted/80">
                   {grp.title}
                 </div>
+              )}
+              {grp.title && gIdx > 0 && (
+                <div className={cn('mx-auto w-5 h-px bg-border mb-2', !collapsed && 'md:hidden')} />
               )}
               {grp.items.map((item) => {
                 const Icon = item.icon
@@ -292,26 +327,45 @@ export const Sidebar: React.FC = () => {
                     key={item.to}
                     to={item.to}
                     title={collapsed ? item.label : undefined}
+                    aria-label={item.label}
+                    onMouseEnter={(e) => (collapsed || window.innerWidth < 768) && showTip(item.label, e)}
+                    onMouseLeave={hideTip}
                     className={cn(
-                      'flex items-center gap-2 px-2 py-1.5 rounded-control text-xs transition-colors relative',
+                      'group relative flex items-center rounded-full text-[13px] transition-all duration-200 ease-out',
+                      collapsed
+                        ? 'w-10 h-10 mx-auto justify-center'
+                        : 'w-10 h-10 mx-auto justify-center md:mx-0 md:w-full md:h-9 md:justify-start md:gap-3 md:px-3',
                       isActive
-                        ? 'bg-[#D6B48A] text-[#1F1F1F] font-medium shadow-xs'
-                        : 'text-[#1F1F1F] hover:bg-[#EBCDB1]'
+                        ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_6px_18px_-8px_rgba(0,0,0,0.55)]'
+                        : 'text-text-muted hover:text-text hover:bg-surface-strong'
                     )}
                   >
-                    <Icon className={cn('w-4 h-4 shrink-0', isActive ? 'text-[#1F1F1F]' : 'text-[#5C4636]')} strokeWidth={1.5} />
+                    <Icon
+                      className="w-[18px] h-[18px] shrink-0 transition-transform duration-200 ease-spring group-hover:scale-110"
+                      strokeWidth={1.75}
+                    />
 
-                    {!collapsed && <span className="truncate flex-1 text-[#1F1F1F]">{item.label}</span>}
+                    {!collapsed && <span className="hidden md:block truncate flex-1">{item.label}</span>}
 
                     {/* Pill only for counts */}
                     {!collapsed && item.badge !== undefined && (
-                      <span className="px-1.5 py-0.2 rounded-full text-[11px] font-normal bg-[#EBCDB1] text-[#1F1F1F] border border-[#DDBF9F] tnum">
+                      <span
+                        className={cn(
+                          'hidden md:inline-flex min-w-[20px] h-5 px-1.5 items-center justify-center rounded-full text-[10.5px] font-semibold tnum',
+                          isActive ? 'bg-accent text-white' : 'bg-danger text-white'
+                        )}
+                      >
                         {item.badge}
                       </span>
                     )}
 
-                    {collapsed && item.badge !== undefined && (
-                      <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#1F1F1F]" />
+                    {item.badge !== undefined && (
+                      <span
+                        className={cn(
+                          'absolute top-1 right-1 w-2 h-2 rounded-full bg-danger ring-2 ring-[var(--surface-solid)]',
+                          !collapsed && 'md:hidden'
+                        )}
+                      />
                     )}
                   </NavLink>
                 )
@@ -319,36 +373,49 @@ export const Sidebar: React.FC = () => {
             </div>
           ))}
         </nav>
+
+        <div className="mx-3 h-px bg-border shrink-0" />
+
+        {/* User Card */}
+        <div className="p-2 shrink-0">
+          <NavLink
+            to="/me"
+            onMouseEnter={(e) => (collapsed || window.innerWidth < 768) && showTip('Account profile', e)}
+            onMouseLeave={hideTip}
+            className={cn(
+              'flex items-center gap-2.5 rounded-full hover:bg-surface-strong transition-colors',
+              collapsed ? 'justify-center p-0.5' : 'justify-center p-0.5 md:justify-start md:p-1.5 md:pr-3'
+            )}
+            title="Account profile"
+          >
+            <div className="relative shrink-0">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FFB36B] to-[#F2763A] text-white font-semibold text-xs flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+                {role.substring(0, 2).toUpperCase()}
+              </div>
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-success ring-2 ring-[var(--surface-solid)]" />
+            </div>
+            {!collapsed && (
+              <div className="min-w-0 flex-1 hidden md:block">
+                <div className="text-[13px] font-medium text-text truncate capitalize leading-tight">
+                  {displayName}
+                </div>
+                <div className="text-[11px] text-text-muted truncate capitalize">{role}</div>
+              </div>
+            )}
+          </NavLink>
+        </div>
       </div>
 
-      {/* User Card */}
-      <div className="p-2 border-t border-[#DDBF9F] bg-[#F6E3D1]">
-        <NavLink
-          to="/me"
-          className="flex items-center gap-2 p-1.5 rounded-control hover:bg-[#EBCDB1] transition-colors"
-          title="Account profile"
+      {/* Floating tooltip (dock mode) */}
+      {tip && (
+        <div
+          className="fixed z-[60] pointer-events-none -translate-y-1/2 px-3 py-1.5 rounded-full glass-strong text-xs font-medium text-text whitespace-nowrap animate-[io-tooltip_180ms_cubic-bezier(0.22,1,0.36,1)_backwards]"
+          style={{ top: tip.top, left: tip.left }}
+          role="tooltip"
         >
-          <div className="w-6 h-6 rounded-full bg-[#EBCDB1] border border-[#DDBF9F] text-[#1F1F1F] font-medium text-xs flex items-center justify-center shrink-0">
-            {role.substring(0, 2).toUpperCase()}
-          </div>
-          {!collapsed && (
-            <div className="min-w-0 flex-1">
-              <div className="text-xs font-normal text-[#1F1F1F] truncate capitalize">
-                {role === 'trainer'
-                  ? 'Arjun Mehta'
-                  : role === 'counselor'
-                  ? 'Snehal Kulkarni'
-                  : role === 'accounts'
-                  ? 'Sunita Accounts'
-                  : 'Rajesh Sharma'}
-              </div>
-              <div className="text-[11px] text-[#5C4636] truncate capitalize">
-                {role}
-              </div>
-            </div>
-          )}
-        </NavLink>
-      </div>
+          {tip.label}
+        </div>
+      )}
     </aside>
   )
 }

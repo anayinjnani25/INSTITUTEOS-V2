@@ -26,24 +26,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const sizeClasses = {
-      xs: 'h-7 px-2 text-xs rounded-control gap-1',
-      sm: 'h-8 px-2.5 text-xs rounded-control gap-1.5',
-      md: 'h-9 px-3.5 text-sm font-medium rounded-control gap-2',
-      lg: 'h-11 px-5 text-base font-medium rounded-control gap-2.5',
-      icon: 'h-9 w-9 p-0 rounded-control justify-center items-center',
+      xs: 'h-7 px-2.5 text-xs rounded-full gap-1',
+      sm: 'h-8 px-3 text-xs rounded-full gap-1.5',
+      md: 'h-9 px-4 text-[13px] font-medium rounded-full gap-2',
+      lg: 'h-11 px-5 text-sm font-medium rounded-full gap-2.5',
+      icon: 'h-9 w-9 p-0 rounded-full justify-center items-center',
     }
 
     const variantClasses = {
       primary:
-        'bg-[var(--btn-primary-bg,#4A3528)] text-[var(--btn-primary-fg,#F8F4EF)] hover:bg-[var(--btn-primary-hover,#33251F)] transition-colors active:opacity-95 disabled:opacity-50 disabled:pointer-events-none',
+        'bg-accent text-white border border-white/10 shadow-[0_8px_22px_-10px_rgb(var(--accent-rgb)/0.9),inset_0_1px_0_rgba(255,255,255,0.25)] hover:brightness-110 hover:shadow-[0_12px_28px_-10px_rgb(var(--accent-rgb)/0.95),inset_0_1px_0_rgba(255,255,255,0.25)] disabled:opacity-50 disabled:pointer-events-none',
       secondary:
-        'bg-[var(--btn-secondary-bg,transparent)] text-[var(--btn-secondary-fg,#1E140E)] border border-[var(--btn-secondary-border,#9A7655)] hover:bg-[var(--btn-secondary-hover,#EBCDB1)] transition-colors active:opacity-95 disabled:opacity-50',
+        'glass-pill text-[var(--btn-secondary-fg)] disabled:opacity-50 disabled:pointer-events-none',
       outline:
-        'border border-[var(--btn-secondary-border,#9A7655)] text-[var(--btn-secondary-fg,#1E140E)] hover:bg-[var(--btn-secondary-hover,#EBCDB1)] transition-colors active:opacity-95 disabled:opacity-50',
+        'border border-border-strong text-text bg-transparent hover:bg-surface-sunken hover:border-text-muted disabled:opacity-50',
       ghost:
-        'text-text-muted hover:text-text hover:bg-surface-sunken transition-colors disabled:opacity-50',
+        'text-text-muted hover:text-text hover:bg-surface-strong disabled:opacity-50',
       destructive:
-        'bg-danger text-white hover:bg-danger/90 transition-colors active:opacity-95 disabled:opacity-50',
+        'bg-[#E5484D] text-white border border-white/10 shadow-[0_8px_22px_-10px_rgba(229,72,77,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-[#EC5D62] disabled:opacity-50',
     }
 
     return (
@@ -51,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={cn(
-          'inline-flex items-center justify-center select-none font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring,#7A5A3E)] focus-visible:ring-offset-1',
+          'inline-flex items-center justify-center select-none font-medium whitespace-nowrap transition-all duration-200 ease-out active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--focus-ring)]',
           sizeClasses[size],
           variantClasses[variant],
           className
@@ -59,7 +59,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {isLoading ? (
-          <Loader2 className="w-3.5 h-3.5 animate-spin" strokeWidth={1.5} />
+          <Loader2 className="w-4 h-4 animate-spin" strokeWidth={2} />
         ) : (
           <>
             {leftIcon}

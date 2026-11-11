@@ -56,59 +56,64 @@ export const SqlBlock: React.FC<SqlBlockProps> = ({ sql, readOnly = true, classN
       const upper = part.toUpperCase()
       if (keywords.includes(upper)) {
         return (
-          <span key={index} className="text-[#D6B48A] font-medium">
+          <span key={index} className="text-[#C4A7FF] font-medium">
             {part}
           </span>
         )
       }
       if (part.startsWith("'") && part.endsWith("'")) {
         return (
-          <span key={index} className="text-[#9FD9AE]">
+          <span key={index} className="text-[#7EE2B0]">
             {part}
           </span>
         )
       }
       if (/^\d+(?:\.\d+)?$/.test(part)) {
         return (
-          <span key={index} className="text-[#F2C46D]">
+          <span key={index} className="text-[#FFCB6B]">
             {part}
           </span>
         )
       }
       if (part.startsWith('--')) {
         return (
-          <span key={index} className="text-[#CDB9A6] italic">
+          <span key={index} className="text-[#6E7684] italic">
             {part}
           </span>
         )
       }
-      return <span key={index} className="text-[#F3E9DE]">{part}</span>
+      return <span key={index} className="text-[#E6EDF3]">{part}</span>
     })
   }
 
   return (
-    <div className={`rounded-card border border-[#4F3B2E] bg-[#33251F] font-mono text-xs overflow-hidden ${className}`}>
-      <div className="flex items-center justify-between px-3 py-1.5 border-b border-[#4F3B2E] bg-[#2A1C14] text-[#CDB9A6] text-xs">
+    <div className={`rounded-[18px] border border-white/10 bg-[#141313]/85 backdrop-blur-xl shadow-[0_18px_40px_-20px_rgba(0,0,0,0.7)] font-mono text-xs overflow-hidden ${className}`}>
+      <div className="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.07] bg-white/[0.03] text-[#8B93A1] text-xs">
         <div className="flex items-center gap-2">
+          <span className="flex items-center gap-1.5 mr-1" aria-hidden="true">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+          </span>
           {readOnly && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-mono text-[#9FD9AE] bg-[#9FD9AE]/10 border border-[#9FD9AE]/30 px-1.5 py-0.5 rounded-control">
-              <ShieldCheck className="w-3 h-3 text-[#9FD9AE]" strokeWidth={1.5} />
+            <span className="inline-flex items-center gap-1 text-[11px] font-mono text-[#7EE2B0] bg-[#7EE2B0]/10 border border-[#7EE2B0]/25 px-2 py-0.5 rounded-full">
+              <ShieldCheck className="w-3 h-3 text-[#7EE2B0]" strokeWidth={1.5} />
               Read-only
             </span>
           )}
-          <span className="text-[11px] text-[#CDB9A6] font-mono">PostgreSQL</span>
+          <span className="text-[11px] text-[#8B93A1] font-mono">PostgreSQL</span>
         </div>
         <button
           onClick={handleCopy}
-          className="inline-flex items-center gap-1 hover:text-[#F3E9DE] text-[#CDB9A6] p-1 rounded transition-colors text-xs"
+          className="inline-flex items-center gap-1 hover:text-white text-[#8B93A1] p-1 rounded-full transition-colors text-xs"
           title="Copy SQL"
         >
-          {copied ? <Check className="w-3 h-3 text-[#9FD9AE]" strokeWidth={1.5} /> : <Copy className="w-3 h-3" strokeWidth={1.5} />}
+          {copied ? <Check className="w-3 h-3 text-[#7EE2B0]" strokeWidth={1.5} /> : <Copy className="w-3 h-3" strokeWidth={1.5} />}
           <span>{copied ? 'Copied' : 'Copy'}</span>
         </button>
       </div>
 
-      <pre className="p-3 overflow-x-auto text-[#F3E9DE] text-xs leading-relaxed whitespace-pre font-mono">
+      <pre className="p-3 overflow-x-auto text-[#E6EDF3] text-xs leading-relaxed whitespace-pre font-mono">
         <code>{highlightSql(sql.trim())}</code>
       </pre>
     </div>

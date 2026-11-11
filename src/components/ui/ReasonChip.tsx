@@ -16,10 +16,10 @@ export const ReasonChip: React.FC<ReasonChipProps> = ({
   icon,
 }) => {
   const variantStyles = {
-    neutral: 'bg-peach-strong text-ink-muted border-border-peach',
-    warning: 'bg-[rgba(138,83,0,0.12)] text-[#8A5300] border-[rgba(138,83,0,0.35)]',
-    danger: 'bg-[rgba(163,18,63,0.12)] text-[#A3123F] border-[rgba(163,18,63,0.35)]',
-    info: 'bg-[rgba(31,87,133,0.12)] text-[#1F5785] border-[rgba(31,87,133,0.35)]',
+    neutral: 'bg-surface-sunken text-text-muted border-border',
+    warning: 'bg-warning/10 text-warning border-warning/25',
+    danger: 'bg-danger/10 text-danger border-danger/25',
+    info: 'bg-info/10 text-info border-info/25',
   }
 
   const defaultIcon = () => {
@@ -39,7 +39,7 @@ export const ReasonChip: React.FC<ReasonChipProps> = ({
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1.5 px-2 py-0.5 rounded-control text-xs font-normal border leading-tight select-none max-w-full truncate',
+        'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-normal border leading-tight select-none max-w-full truncate',
         variantStyles[variant],
         className
       )}

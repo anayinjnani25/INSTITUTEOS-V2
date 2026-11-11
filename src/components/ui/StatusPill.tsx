@@ -51,7 +51,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   // Attendance
   if (s === 'present') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-text', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-surface-sunken border-border text-text', className)}>
         <span className="w-1.5 h-1.5 rounded-full bg-success shrink-0" aria-hidden="true" />
         <span>{label || 'Present'}</span>
       </span>
@@ -59,7 +59,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'partial') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-warning', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-warning/10 border-warning/25 text-warning', className)}>
         <span className="text-[11px] leading-none shrink-0" aria-hidden="true">◐</span>
         <span>{label || 'Partial'}</span>
       </span>
@@ -67,7 +67,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'late') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-warning', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-warning/10 border-warning/25 text-warning', className)}>
         <Clock className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || 'Late'}</span>
       </span>
@@ -75,7 +75,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'absent') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-danger', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-danger/10 border-danger/25 text-danger', className)}>
         <span className="w-1.5 h-1.5 rounded-full border border-danger shrink-0" aria-hidden="true" />
         <span>{label || 'Absent'}</span>
       </span>
@@ -83,7 +83,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'online') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-info', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-info/10 border-info/25 text-info', className)}>
         <span className="text-[10px] leading-none text-info shrink-0" aria-hidden="true">◆</span>
         <span>{label || 'Online'}</span>
       </span>
@@ -91,7 +91,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'excused') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-text-muted', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-surface-sunken border-border text-text-muted', className)}>
         <HelpCircle className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || 'Excused'}</span>
       </span>
@@ -101,7 +101,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   // Fees
   if (s === 'paid' || s === 'verified') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-success', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-success/10 border-success/25 text-success', className)}>
         <CheckCircle2 className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || (s === 'verified' ? 'Verified' : 'Paid')}</span>
       </span>
@@ -109,7 +109,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'due_soon' || s === 'partially_paid' || s === 'needs_review') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-warning', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-warning/10 border-warning/25 text-warning', className)}>
         <Clock className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || (s === 'due_soon' ? 'Due soon' : s === 'partially_paid' ? 'Partially paid' : 'Needs review')}</span>
       </span>
@@ -117,7 +117,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'overdue' || s === 'unmatched') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-danger', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-danger/10 border-danger/25 text-danger', className)}>
         <AlertTriangle className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || (s === 'overdue' ? 'Overdue' : 'Unmatched')}</span>
       </span>
@@ -125,7 +125,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'waived') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-text-muted', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-surface-sunken border-border text-text-muted', className)}>
         <span className="w-1.5 h-1.5 rounded-full bg-border-strong shrink-0" aria-hidden="true" />
         <span>{label || 'Waived'}</span>
       </span>
@@ -135,7 +135,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   // Risk Tiers: Critical, High, Watch, Low
   if (s === 'critical') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-medium text-danger', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-danger/10 border-danger/25 text-danger', className)}>
         <ShieldAlert className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || 'Critical'}</span>
       </span>
@@ -143,7 +143,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'high') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-medium text-warning', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-warning/10 border-warning/25 text-warning', className)}>
         <AlertTriangle className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || 'High'}</span>
       </span>
@@ -151,7 +151,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'watch') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-warning', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-warning/10 border-warning/25 text-warning', className)}>
         <Clock className="w-3.5 h-3.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>{label || 'Watch'}</span>
       </span>
@@ -159,7 +159,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
   }
   if (s === 'low') {
     return (
-      <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-text-muted', className)}>
+      <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-surface-sunken border-border text-text-muted', className)}>
         <span className="w-1.5 h-1.5 rounded-full bg-border-strong shrink-0" aria-hidden="true" />
         <span>{label || 'Low'}</span>
       </span>
@@ -168,7 +168,7 @@ export const StatusPill: React.FC<StatusIndicatorProps> = ({
 
   // Generic status
   return (
-    <span className={cn('inline-flex items-center gap-1.5 text-xs font-normal text-text-muted', className)}>
+    <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11.5px] font-medium leading-5 whitespace-nowrap bg-surface-sunken border-border text-text-muted', className)}>
       <span className="w-1.5 h-1.5 rounded-full bg-border-strong shrink-0" aria-hidden="true" />
       <span>{label || status}</span>
     </span>
