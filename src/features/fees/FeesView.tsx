@@ -104,7 +104,7 @@ export const FeesView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Fees & EMIs</h1>
+          <h1 className="page-title">Fees & EMIs</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Instalment ledger, dues ageing breakdown, and staged payment reminders
           </p>
@@ -206,7 +206,7 @@ export const FeesView: React.FC = () => {
       {/* Flat Ageing Bar */}
       <div className="p-4 rounded-card border border-border bg-surface space-y-3">
         <div className="flex items-center justify-between pb-2 border-b border-border">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+          <h3 className="card-title">
             Overdue dues ageing ({showAmounts ? '₹45,500 total arrears' : '7 overdue accounts'})
           </h3>
           <span className="text-[11px] text-text-muted">Updated today</span>

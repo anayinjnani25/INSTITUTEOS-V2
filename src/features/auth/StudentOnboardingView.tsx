@@ -112,7 +112,7 @@ export const StudentOnboardingView: React.FC<StudentOnboardingViewProps> = ({ on
           </div>
 
           <div className="mt-5">
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-text">
+            <h1 className="page-title">
               Complete Your Student Information
             </h1>
             <p className="text-xs text-text-muted mt-1.5 leading-relaxed">

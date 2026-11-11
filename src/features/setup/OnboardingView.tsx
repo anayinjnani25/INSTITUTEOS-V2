@@ -78,7 +78,7 @@ export const OnboardingView: React.FC = () => {
     <div className="max-w-3xl mx-auto space-y-6 select-none py-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight text-text">Institute setup</h1>
+          <h1 className="page-title">Institute setup</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Configure campuses, cohorts, and import rosters to initialize operations
           </p>

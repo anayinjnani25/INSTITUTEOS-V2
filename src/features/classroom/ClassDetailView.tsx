@@ -416,7 +416,7 @@ export const ClassDetailView: React.FC = () => {
               <span className="font-mono text-[10px] text-text-muted border border-border px-1.5 py-0.5 rounded bg-surface-sunken">
                 {currentClass.year} · {currentClass.division}
               </span>
-              <h1 className="text-xl font-semibold text-text">{currentClass.name}</h1>
+              <h1 className="page-title">{currentClass.name}</h1>
             </div>
             <p className="text-xs text-text-muted mt-1">
               Subject: <strong className="text-text font-medium">{currentClass.subject}</strong> · Batch: {batch?.name || currentClass.batchId} ({batch?.branch} Campus)
@@ -461,7 +461,7 @@ export const ClassDetailView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'stream'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -472,7 +472,7 @@ export const ClassDetailView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'notes'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -483,7 +483,7 @@ export const ClassDetailView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'assignments'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -494,7 +494,7 @@ export const ClassDetailView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeTab === 'people'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -506,7 +506,7 @@ export const ClassDetailView: React.FC = () => {
             className={cn(
               'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
               activeTab === 'grades'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
@@ -918,7 +918,7 @@ export const ClassDetailView: React.FC = () => {
         <div className="space-y-6">
           {/* Teachers Section */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold text-text uppercase tracking-wider">
+            <h3 className="card-title">
               Faculty & Instructors ({classTeachers.length})
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -939,7 +939,7 @@ export const ClassDetailView: React.FC = () => {
 
           {/* Students Section */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold text-text uppercase tracking-wider">
+            <h3 className="card-title">
               Classmates & Enrolled Candidates ({classStudents.length})
             </h3>
             <div className="rounded-card border border-border bg-surface overflow-hidden">

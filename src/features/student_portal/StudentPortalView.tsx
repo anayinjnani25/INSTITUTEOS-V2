@@ -238,7 +238,7 @@ export const StudentPortalView: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-xl font-semibold text-text">{currentStudent.name}</h1>
+                <h1 className="page-title">{currentStudent.name}</h1>
                 <span className="text-xs px-2 py-0.5 rounded-control bg-surface-sunken border border-border text-text-muted">
                   Roll #104
                 </span>
@@ -332,7 +332,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('today')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'today'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
@@ -342,7 +342,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('schedule')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'schedule'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
@@ -352,7 +352,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('classes')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeTab === 'classes'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
@@ -363,7 +363,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('recordings')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'recordings'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
@@ -373,7 +373,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('fees')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'fees'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >
@@ -383,7 +383,7 @@ export const StudentPortalView: React.FC = () => {
             onClick={() => setActiveTab('certificate')}
             className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
               activeTab === 'certificate'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             }`}
           >

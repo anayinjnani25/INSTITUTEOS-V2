@@ -27,7 +27,7 @@ export const AuditLogView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Audit log</h1>
+          <h1 className="page-title">Audit log</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Immutable operational event ledger with SQL provenance, user approvals, and before/after diffs
           </p>

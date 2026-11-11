@@ -143,7 +143,7 @@ export const DashboardView: React.FC = () => {
         {/* Desktop Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
           <div>
-            <h1 className="text-xl font-semibold text-text">Good afternoon, {currentStudent?.name.split(' ')[0] || 'Student'}</h1>
+            <h1 className="page-title">Good afternoon, {currentStudent?.name.split(' ')[0] || 'Student'}</h1>
             <p className="text-xs text-text-muted mt-0.5">
               {currentStudent?.batchNames[0] || 'Java Full-Stack B3 (Kothrud)'} · Roll #104 · CodeCraft Academy Pune · Thu, 16 Oct 2026
             </p>
@@ -481,7 +481,7 @@ export const DashboardView: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
           <div>
-            <h1 className="text-xl font-semibold text-text">Good afternoon, Arjun</h1>
+            <h1 className="page-title">Good afternoon, Arjun</h1>
             <p className="text-xs text-text-muted mt-0.5">
               CodeCraft Academy · {branch === 'All' ? 'All Campuses' : `${branch} Campus`} · Thu, 16 Oct 2026
             </p>
@@ -691,7 +691,7 @@ export const DashboardView: React.FC = () => {
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
           <div>
-            <h1 className="text-xl font-semibold text-text">Good afternoon, Snehal</h1>
+            <h1 className="page-title">Good afternoon, Snehal</h1>
             <p className="text-xs text-text-muted mt-0.5">
               CodeCraft Academy · Student Success & Counseling · Thu, 16 Oct 2026
             </p>
@@ -817,7 +817,7 @@ export const DashboardView: React.FC = () => {
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
           <div>
-            <h1 className="text-xl font-semibold text-text">Good afternoon, Sunita</h1>
+            <h1 className="page-title">Good afternoon, Sunita</h1>
             <p className="text-xs text-text-muted mt-0.5">
               CodeCraft Academy · Accounts & Collections · Thu, 16 Oct 2026
             </p>
@@ -1005,7 +1005,7 @@ export const DashboardView: React.FC = () => {
       {/* 1. Header: Greeting, date & branch scope + 4 secondary quick actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">
+          <h1 className="page-title">
             Good afternoon, {currentUser.name}
           </h1>
           <p className="text-xs text-text-muted mt-0.5">
@@ -1081,7 +1081,7 @@ export const DashboardView: React.FC = () => {
       <div className="border border-border rounded-card bg-surface overflow-hidden">
         <div className="px-4 py-3 border-b border-border bg-surface-sunken/40 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <h2 className="text-xs font-semibold text-text uppercase tracking-wider">
+            <h2 className="card-title">
               Needs a decision
             </h2>
             <span className="text-[11px] tabular-nums font-medium px-2 py-0.5 rounded-full border border-border bg-surface text-text">

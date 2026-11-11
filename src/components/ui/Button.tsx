@@ -26,24 +26,25 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const sizeClasses = {
-      xs: 'h-7 px-2.5 text-xs rounded-full gap-1',
-      sm: 'h-8 px-3 text-xs rounded-full gap-1.5',
-      md: 'h-9 px-4 text-[13px] font-medium rounded-full gap-2',
-      lg: 'h-11 px-5 text-sm font-medium rounded-full gap-2.5',
-      icon: 'h-9 w-9 p-0 rounded-full justify-center items-center',
+      xs: 'h-7 px-3 text-xs rounded-full gap-1',
+      sm: 'h-8 px-3.5 text-xs rounded-full gap-1.5',
+      md: 'h-10 px-4 text-[13.5px] font-semibold rounded-full gap-2',
+      lg: 'h-11 px-5 text-sm font-semibold rounded-full gap-2.5',
+      icon: 'h-10 w-10 p-0 rounded-full justify-center items-center',
     }
 
+    // Corbel-style: light ink pill for primary, rimmed glass for secondary
     const variantClasses = {
       primary:
-        'bg-accent text-white border border-white/10 shadow-[0_8px_22px_-10px_rgb(var(--accent-rgb)/0.9),inset_0_1px_0_rgba(255,255,255,0.25)] hover:brightness-110 hover:shadow-[0_12px_28px_-10px_rgb(var(--accent-rgb)/0.95),inset_0_1px_0_rgba(255,255,255,0.25)] disabled:opacity-50 disabled:pointer-events-none',
+        'bg-[var(--pill)] text-[var(--on-pill)] hover:bg-[var(--btn-primary-hover)] shadow-[0_10px_24px_-14px_rgba(0,0,0,0.7)] disabled:opacity-50 disabled:pointer-events-none',
       secondary:
         'glass-pill text-[var(--btn-secondary-fg)] disabled:opacity-50 disabled:pointer-events-none',
       outline:
-        'border border-border-strong text-text bg-transparent hover:bg-surface-sunken hover:border-text-muted disabled:opacity-50',
+        'bg-transparent text-text shadow-[inset_0_0_0_1px_var(--border-strong)] hover:bg-surface-sunken disabled:opacity-50',
       ghost:
         'text-text-muted hover:text-text hover:bg-surface-strong disabled:opacity-50',
       destructive:
-        'bg-[#E5484D] text-white border border-white/10 shadow-[0_8px_22px_-10px_rgba(229,72,77,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-[#EC5D62] disabled:opacity-50',
+        'bg-danger/15 text-danger shadow-[inset_0_0_0_1px_rgb(var(--danger-rgb)/0.35)] hover:bg-danger/25 disabled:opacity-50',
     }
 
     return (

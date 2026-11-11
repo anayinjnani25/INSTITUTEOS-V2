@@ -231,7 +231,7 @@ export const SubmissionReviewView: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2.5 pt-0.5">
-            <h1 className="text-lg font-semibold text-text">{studentName}</h1>
+            <h1 className="page-title">{studentName}</h1>
             <span
               className={cn(
                 'text-xs px-2 py-0.5 rounded-control font-medium capitalize',

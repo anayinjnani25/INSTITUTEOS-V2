@@ -123,7 +123,7 @@ export const TrainerProfileView: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base font-semibold text-text">{trainer.name}</h1>
+                <h1 className="text-2xl font-semibold tracking-tight text-text">{trainer.name}</h1>
                 <span className="text-xs text-text-muted flex items-center gap-1">
                   <Star className="w-3 h-3 text-warning fill-warning" />
                   {trainer.rating} rating
@@ -177,7 +177,7 @@ export const TrainerProfileView: React.FC = () => {
       <div className="p-4 rounded-card border border-border bg-surface space-y-3">
         <div className="flex items-center justify-between pb-2 border-b border-border">
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+            <h3 className="card-title">
               Weekly availability matrix
             </h3>
             <p className="text-[11px] text-text-muted">
@@ -245,7 +245,7 @@ export const TrainerProfileView: React.FC = () => {
 
       {/* Leave Requests */}
       <div className="p-4 rounded-card border border-border bg-surface space-y-3">
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+        <h3 className="card-title">
           Leave requests
         </h3>
         {trainer.leaveRequests.length > 0 ? (

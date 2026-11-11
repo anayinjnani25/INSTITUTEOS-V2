@@ -67,7 +67,7 @@ export const CertificateVerifyView: React.FC = () => {
                 <AlertOctagon className="w-3.5 h-3.5" />
                 Credential Revoked
               </div>
-              <h1 className="text-lg font-semibold text-text mt-2">{cert.studentName}</h1>
+              <h1 className="page-title mt-2">{cert.studentName}</h1>
               <p className="text-xs text-danger mt-1">
                 This credential was officially revoked by CodeCraft Academy academic governance.
               </p>
@@ -102,7 +102,7 @@ export const CertificateVerifyView: React.FC = () => {
                 <ShieldCheck className="w-3.5 h-3.5" />
                 Verified Authenticated Credential
               </div>
-              <h1 className="text-lg font-semibold text-text mt-2">{cert.studentName}</h1>
+              <h1 className="page-title mt-2">{cert.studentName}</h1>
               <p className="text-xs text-text-muted mt-0.5">{cert.courseName}</p>
             </div>
 

@@ -124,7 +124,7 @@ export const ClassroomReviewView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">To review</h1>
+          <h1 className="page-title">To review</h1>
           <p className="text-xs text-text-muted mt-0.5">
             {waitingCount === 1 ? '1 submission' : `${waitingCount} submissions`} waiting for teacher evaluation or release
           </p>

@@ -152,7 +152,7 @@ export const BatchDetailView: React.FC = () => {
               <span className="font-mono text-[10px] text-text-muted border border-border px-1.5 py-0.5 rounded bg-surface-sunken">
                 {batch.code}
               </span>
-              <h1 className="text-lg font-semibold text-text">{batch.name}</h1>
+              <h1 className="page-title">{batch.name}</h1>
             </div>
             <p className="text-xs text-text-muted mt-0.5">
               Course: {batch.courseName} · Campus: {batch.branch}
@@ -232,7 +232,7 @@ export const BatchDetailView: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-accent" />
-                <h2 className="text-xs font-semibold uppercase tracking-wider text-text">Class Strength & Capacity</h2>
+                <h2 className="card-title">Class Strength & Capacity</h2>
               </div>
               <span className={`text-xs font-medium px-2 py-0.5 rounded ${isOver ? 'bg-danger/10 text-danger' : 'bg-surface-sunken text-text'}`}>
                 {strength.enrolled} / {strength.capacity} Enrolled ({seatsLeft} seats left)
@@ -272,7 +272,7 @@ export const BatchDetailView: React.FC = () => {
       {/* Roster of Enrolled Students */}
       <div className="rounded-card border border-border bg-surface overflow-hidden">
         <div className="p-3 border-b border-border bg-surface-sunken/40 flex items-center justify-between">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+          <h3 className="card-title">
             Enrolled student roster ({enrolledStudents.length})
           </h3>
           <Button

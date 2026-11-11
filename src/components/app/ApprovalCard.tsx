@@ -283,7 +283,7 @@ export const ApprovalCard: React.FC<ApprovalCardProps> = ({
       {/* Student Registration Admission Details */}
       {approval.type === 'student_registration' && approval.studentRegistration && (
         <div className="mt-3.5 space-y-2.5">
-          <div className="text-xs font-semibold text-text uppercase tracking-wider">
+          <div className="card-title">
             Student Admission Profile
           </div>
           <div className="p-3.5 rounded-control bg-surface-sunken border border-border space-y-2.5 text-xs">

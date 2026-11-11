@@ -91,7 +91,7 @@ GROUP BY r.id, r.room_number;`,
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Analytics</h1>
+          <h1 className="page-title">Analytics</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Operational reporting backed by SQL analytical views and deterministic audits
           </p>
@@ -125,7 +125,7 @@ GROUP BY r.id, r.room_number;`,
             className={cn(
               'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
               activeReport === 'collections'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
@@ -137,7 +137,7 @@ GROUP BY r.id, r.room_number;`,
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeReport === 'attendance'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -148,7 +148,7 @@ GROUP BY r.id, r.room_number;`,
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap',
             activeReport === 'trainer_load'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -170,7 +170,7 @@ GROUP BY r.id, r.room_number;`,
       {/* Main Chart/Table Card */}
       <div className="p-4 rounded-card border border-border bg-surface space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-border">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-text">
+          <h2 className="card-title">
             {activeReport === 'collections'
               ? 'Tuition collections (6 months)'
               : activeReport === 'attendance'

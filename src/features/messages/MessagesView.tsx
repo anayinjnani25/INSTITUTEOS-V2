@@ -138,7 +138,7 @@ export const MessagesView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Messages</h1>
+          <h1 className="page-title">Messages</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Outbound WhatsApp dispatches, automated reminder delivery, and template management
           </p>
@@ -161,7 +161,7 @@ export const MessagesView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors',
             activeTab === 'outbox'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -172,7 +172,7 @@ export const MessagesView: React.FC = () => {
           className={cn(
             'py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors',
             activeTab === 'templates'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >

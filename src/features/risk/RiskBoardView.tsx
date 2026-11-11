@@ -105,7 +105,7 @@ export const RiskBoardView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Risk board</h1>
+          <h1 className="page-title">Risk board</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Student retention monitoring, automated risk diagnostics, and intervention workflows
           </p>

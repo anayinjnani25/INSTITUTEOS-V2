@@ -34,7 +34,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="w-16 h-16 rounded-full bg-danger/10 border border-danger/25 text-danger flex items-center justify-center mb-5 shadow-[0_0_40px_-8px_rgb(var(--danger-rgb)/0.5)] io-rise">
             <AlertOctagon className="w-7 h-7" />
           </div>
-          <h1 className="text-lg font-semibold tracking-tight text-text">Something went wrong</h1>
+          <h1 className="page-title">Something went wrong</h1>
           <p className="text-xs text-text-muted mt-1.5 max-w-md leading-relaxed">
             An unexpected error occurred while rendering this interface. Your data in the local store is preserved.
           </p>

@@ -91,7 +91,7 @@ export const HeadApprovalPendingView: React.FC = () => {
           </div>
 
           <div className="mt-5">
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-text">
+            <h1 className="page-title">
               Head Approval Pending
             </h1>
             <p className="text-xs text-text-muted mt-1.5 leading-relaxed">
@@ -106,7 +106,7 @@ export const HeadApprovalPendingView: React.FC = () => {
         <div className="p-6 sm:p-8 space-y-5">
           <div className="bg-surface-sunken rounded-card border border-border p-4.5 space-y-3.5 shadow-xs">
             <div className="flex items-center justify-between pb-2.5 border-b border-border">
-              <span className="text-xs font-semibold text-text uppercase tracking-wider">
+              <span className="card-title">
                 Submitted Student Details
               </span>
               <span className="text-[11px] text-text-muted font-mono">

@@ -288,7 +288,7 @@ export const AssignmentDetailView: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 pt-1">
-            <h1 className="text-xl font-semibold text-text">{assignment.title}</h1>
+            <h1 className="page-title">{assignment.title}</h1>
             <span
               className={cn(
                 'text-xs px-2.5 py-0.5 rounded-control font-medium uppercase tracking-wider',

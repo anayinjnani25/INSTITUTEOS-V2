@@ -23,6 +23,7 @@ export default {
         text: {
           DEFAULT: 'var(--text)',
           muted: 'var(--text-muted)',
+          faint: 'var(--text-faint)',
         },
         accent: {
           DEFAULT: channel('--accent-rgb'),
@@ -50,12 +51,12 @@ export default {
         'border-peach': 'var(--border)',
       },
       fontFamily: {
-        sans: ['Poppins', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'sans-serif'],
+        sans: ['Urbanist', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        display: ['Urbanist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'IBM Plex Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
-        control: '12px',
+        control: '14px',
         card: '22px',
         dialog: '28px',
         full: '9999px',
@@ -76,8 +77,8 @@ export default {
         sheet: '320ms',
       },
       transitionTimingFunction: {
-        DEFAULT: 'cubic-bezier(0.22, 1, 0.36, 1)',
-        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        DEFAULT: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+        out: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
         spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       },
       keyframes: {
@@ -92,13 +93,14 @@ export default {
         rise: 'rise 520ms cubic-bezier(0.22, 1, 0.36, 1) both',
       },
       fontSize: {
+        '2xs': ['11px', '14px'],
         xs: ['12px', '16px'],
-        sm: ['13px', '18px'],
+        sm: ['13.5px', '19px'],
         base: ['14px', '20px'],
-        lg: ['16px', '22px'],
-        xl: ['18px', '24px'],
-        '2xl': ['24px', '30px'],
-        '3xl': ['32px', '38px'],
+        lg: ['15px', '21px'],
+        xl: ['17px', '23px'],
+        '2xl': ['22px', '28px'],
+        '3xl': ['34px', '40px'],
       },
     },
   },

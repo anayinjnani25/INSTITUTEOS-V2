@@ -89,7 +89,7 @@ export const CertificatesView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Certificates & credentials</h1>
+          <h1 className="page-title">Certificates & credentials</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Verifiable credentials with QR verification and graduation compliance checks
           </p>
@@ -199,7 +199,7 @@ export const CertificatesView: React.FC = () => {
           {/* Active Registry Card */}
           <div className="rounded-card border border-border bg-surface p-4 space-y-3">
             <div className="flex items-center justify-between pb-2 border-b border-border">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+              <h3 className="card-title">
                 Issued credentials ({certificates.length})
               </h3>
               <span className="text-[11px] text-text-muted">Registry ledger</span>

@@ -121,7 +121,7 @@ export const ClassroomListView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Classrooms & cohorts</h1>
+          <h1 className="page-title">Classrooms & cohorts</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Subject workspaces, lecture notes, rubric marking parameters, and AI evaluation
           </p>

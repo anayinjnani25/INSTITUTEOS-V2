@@ -181,7 +181,7 @@ export const StudentsView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Students</h1>
+          <h1 className="page-title">Students</h1>
           <p className="text-xs text-text-muted mt-0.5">
             320 enrolled candidates · Attendance, risk monitoring, and academic progress
           </p>
@@ -216,7 +216,7 @@ export const StudentsView: React.FC = () => {
             className={cn(
               'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'all'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
@@ -227,7 +227,7 @@ export const StudentsView: React.FC = () => {
             className={cn(
               'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'active'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
@@ -238,7 +238,7 @@ export const StudentsView: React.FC = () => {
             className={cn(
               'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
               activeTab === 'at_risk'
-                ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                 : 'text-text-muted hover:text-text hover:bg-surface-strong'
             )}
           >
@@ -250,7 +250,7 @@ export const StudentsView: React.FC = () => {
               className={cn(
                 'py-2 px-3 rounded-full border-0 h-8 flex items-center font-medium transition-colors',
                 activeTab === 'overdue'
-                  ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+                  ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
                   : 'text-text-muted hover:text-text hover:bg-surface-strong'
               )}
             >

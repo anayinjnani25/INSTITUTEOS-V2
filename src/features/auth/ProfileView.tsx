@@ -26,7 +26,7 @@ export const ProfileView: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto space-y-6 select-none py-4">
       <div className="pb-3 border-b border-border">
-        <h1 className="text-xl font-semibold tracking-tight text-text">Account and profile</h1>
+        <h1 className="page-title">Account and profile</h1>
         <p className="text-xs text-text-muted mt-0.5">
           Personal credentials, security preferences and keyboard shortcuts
         </p>

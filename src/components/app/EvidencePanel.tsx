@@ -72,7 +72,7 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
           className={cn(
             'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'sql'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -85,7 +85,7 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
           className={cn(
             'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'sources'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -98,7 +98,7 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
           className={cn(
             'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'filters'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >
@@ -111,7 +111,7 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({
           className={cn(
             'flex items-center gap-1.5 py-2 px-2.5 rounded-full border-0 h-8 flex items-center transition-colors text-xs',
             activeTab === 'safety'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           )}
         >

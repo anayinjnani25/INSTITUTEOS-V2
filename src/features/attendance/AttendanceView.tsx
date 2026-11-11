@@ -113,7 +113,7 @@ export const AttendanceView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Sessions & attendance</h1>
+          <h1 className="page-title">Sessions & attendance</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Cohort aggregate tracking, QR check-in records, and daily turnout rates
           </p>

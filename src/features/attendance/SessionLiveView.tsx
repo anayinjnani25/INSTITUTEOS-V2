@@ -246,7 +246,7 @@ export const SessionLiveView: React.FC = () => {
           </button>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-base font-semibold text-text">Live: Java Full-Stack B3 (Kothrud)</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-text">Live: Java Full-Stack B3 (Kothrud)</h1>
               <span className="text-[11px] font-mono px-2 py-0.5 rounded border border-border bg-surface-sunken text-text-muted">
                 Room 3 & Zoom Hybrid
               </span>
@@ -289,7 +289,7 @@ export const SessionLiveView: React.FC = () => {
         {/* Left QR Card */}
         <div className="lg:col-span-4 rounded-card border border-border bg-surface p-4 text-center space-y-4 flex flex-col justify-between">
           <div className="space-y-1">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-text">
+            <h3 className="card-title">
               Dynamic check-in QR
             </h3>
             <p className="text-[11px] text-text-muted">
@@ -345,7 +345,7 @@ export const SessionLiveView: React.FC = () => {
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-text-muted" />
-                <h3 className="text-xs font-semibold text-text uppercase tracking-wider">
+                <h3 className="card-title">
                   Check-in roster ({presentCount} of {attendees.length} present)
                 </h3>
               </div>

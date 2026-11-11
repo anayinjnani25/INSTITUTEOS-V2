@@ -3,146 +3,169 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   InstituteOS — "Dusk Glass" design system
-   Frosted panels floating over a warm, ambient scene.
+   InstituteOS design system
+   Structure: Corbel-style shell (brand · pill tab bar · tools, floating
+   utility dock, display page titles, graded KPI tiles, 22px cards).
+   Surface: frosted monochrome glass over a softened interior photograph.
    All colours, radii, shadows and motion live here as tokens.
    ========================================================================== */
 
 @layer base {
   :root {
     /* Motion */
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
     --dur-fast: 160ms;
     --dur-base: 240ms;
     --dur-slow: 420ms;
 
+    /* Layout (Corbel) */
+    --dock-x: 20px;
+    --dock-w: 60px;
+    --side-w: calc(var(--dock-x) + var(--dock-w));
+    --gut: clamp(16px, 1.6vw, 28px);
+
     /* Glass */
-    --glass-blur: 26px;
-    --glass-saturate: 125%;
+    --glass-blur: 22px;
+    --glass-saturate: 120%;
   }
 
-  /* ---------- LIGHT · "Daylight" ---------- */
+  /* ---------- LIGHT · "Gallery" ---------- */
   :root {
     --canvas: transparent;
-    --surface: rgba(255, 255, 255, 0.64);
-    --surface-sunken: rgba(20, 18, 16, 0.045);
-    --surface-strong: rgba(20, 18, 16, 0.08);
-    --surface-solid: rgba(250, 248, 245, 0.9);
-    --border: rgba(20, 18, 16, 0.09);
-    --border-strong: rgba(20, 18, 16, 0.2);
-    --highlight: rgba(255, 255, 255, 0.75);
-    --text: #1B1917;
-    --text-muted: rgba(27, 25, 23, 0.58);
+    --surface: rgba(252, 251, 249, 0.72);
+    --surface-sunken: rgba(17, 17, 17, 0.045);
+    --surface-strong: rgba(17, 17, 17, 0.08);
+    --surface-solid: rgba(250, 249, 247, 0.94);
+    --border: rgba(17, 17, 17, 0.09);
+    --border-strong: rgba(17, 17, 17, 0.2);
+    --rim: rgba(17, 17, 17, 0.07);
+    --highlight: rgba(255, 255, 255, 0.8);
+    --text: #141414;
+    --text-muted: #5E5E5A;
+    --text-faint: #8A8A86;
 
-    --accent-rgb: 37 99 235;
-    --accent-hover: #1D4ED8;
+    --accent-rgb: 22 22 22;
+    --accent-hover: #000000;
     --accent-fg: #FFFFFF;
-    --accent-subtle: rgba(37, 99, 235, 0.1);
+    --accent-subtle: rgba(22, 22, 22, 0.07);
 
-    --success-rgb: 5 150 105;
-    --success-subtle: rgba(5, 150, 105, 0.1);
-    --warning-rgb: 202 120 10;
-    --warning-subtle: rgba(202, 120, 10, 0.12);
-    --danger-rgb: 225 29 72;
-    --danger-subtle: rgba(225, 29, 72, 0.1);
-    --info-rgb: 59 130 246;
-    --info-subtle: rgba(59, 130, 246, 0.1);
+    --success-rgb: 21 128 96;
+    --success-subtle: rgba(21, 128, 96, 0.1);
+    --warning-rgb: 176 112 10;
+    --warning-subtle: rgba(176, 112, 10, 0.12);
+    --danger-rgb: 200 64 40;
+    --danger-subtle: rgba(200, 64, 40, 0.1);
+    --info-rgb: 52 104 180;
+    --info-subtle: rgba(52, 104, 180, 0.1);
 
-    --ai-chip: #6D28D9;
-    --ai-chip-bg: rgba(124, 58, 237, 0.1);
+    --ai-chip: #5B3FB0;
+    --ai-chip-bg: rgba(91, 63, 176, 0.1);
 
-    --btn-primary-bg: #1B1917;
+    --pill: #141414;
+    --on-pill: #FFFFFF;
+    --btn-primary-bg: #141414;
     --btn-primary-fg: #FFFFFF;
     --btn-primary-hover: #000000;
-    --btn-secondary-bg: rgba(255, 255, 255, 0.55);
-    --btn-secondary-border: rgba(20, 18, 16, 0.1);
-    --btn-secondary-fg: #1B1917;
-    --btn-secondary-hover: rgba(255, 255, 255, 0.85);
+    --btn-secondary-bg: rgba(255, 255, 255, 0.7);
+    --btn-secondary-border: rgba(17, 17, 17, 0.09);
+    --btn-secondary-fg: #141414;
+    --btn-secondary-hover: rgba(255, 255, 255, 0.95);
+    --seg-active-bg: #FFFFFF;
+    --seg-active-fg: #141414;
 
-    --input-bg: rgba(255, 255, 255, 0.6);
-    --input-bg-focus: rgba(255, 255, 255, 0.92);
-    --option-bg: #F7F4F0;
+    --input-bg: rgba(255, 255, 255, 0.7);
+    --input-bg-focus: #FFFFFF;
+    --option-bg: #F7F6F3;
 
-    --shadow-card: 0 1px 0 0 var(--highlight) inset, 0 10px 30px -14px rgba(60, 40, 20, 0.22);
-    --shadow-card-hover: 0 1px 0 0 var(--highlight) inset, 0 22px 44px -18px rgba(60, 40, 20, 0.32);
-    --shadow-popover: 0 1px 0 0 var(--highlight) inset, 0 18px 50px -12px rgba(40, 28, 16, 0.28);
-    --shadow-dialog: 0 1px 0 0 var(--highlight) inset, 0 40px 90px -20px rgba(30, 20, 10, 0.4);
+    /* KPI tile ramp (Corbel-style graded tiles) */
+    --tile-1: #FFFFFF;
+    --tile-2: #EDEDEA;
+    --tile-3: #E0E0DB;
+    --tile-4: #D0D0CA;
+    --on-tile: #14202A;
 
-    --scrollbar-thumb: rgba(20, 18, 16, 0.18);
-    --focus-ring: rgba(37, 99, 235, 0.55);
+    --shadow-card: inset 0 0 0 1px var(--rim), 0 1px 0 0 var(--highlight) inset, 0 18px 40px -28px rgba(40, 30, 20, 0.35);
+    --shadow-card-hover: inset 0 0 0 1px var(--border-strong), 0 1px 0 0 var(--highlight) inset, 0 24px 48px -24px rgba(40, 30, 20, 0.4);
+    --shadow-popover: 0 24px 60px -18px rgba(30, 20, 10, 0.35), 0 0 0 1px rgba(17, 17, 17, 0.08);
+    --shadow-dialog: 0 40px 90px -24px rgba(30, 20, 10, 0.45), 0 0 0 1px rgba(17, 17, 17, 0.08);
 
-    /* Scene */
-    --scene-top: #D9D4CE;
-    --scene-sky-1: #C9D3DE;
-    --scene-sky-2: #E6E0D8;
-    --scene-horizon: #F2D2AE;
-    --scene-floor: #D8C3AC;
-    --scene-glow: rgba(255, 190, 120, 0.55);
-    --scene-glow-2: rgba(255, 150, 120, 0.22);
-    --scene-mullion: rgba(70, 55, 45, 0.1);
-    --scene-vignette: rgba(80, 60, 40, 0.12);
+    --scrollbar-thumb: rgba(17, 17, 17, 0.2);
+    --focus-ring: rgba(17, 17, 17, 0.45);
+
+    /* Background photo treatment */
+    --bg-base: #EDEBE6;
+    --bg-overlay: linear-gradient(180deg, rgba(240, 238, 233, 0.78) 0%, rgba(240, 238, 233, 0.84) 45%, rgba(236, 233, 227, 0.9) 100%);
+    --bg-vignette: radial-gradient(120% 90% at 50% 35%, transparent 55%, rgba(120, 100, 80, 0.16) 100%);
+    --bg-photo-opacity: 1;
   }
 
-  /* ---------- DARK · "Dusk" (default) ---------- */
+  /* ---------- DARK · "Evening" (default) ---------- */
   .dark {
-    --surface: rgba(32, 29, 28, 0.56);
-    --surface-sunken: rgba(255, 255, 255, 0.05);
-    --surface-strong: rgba(255, 255, 255, 0.1);
-    --surface-solid: rgba(28, 25, 24, 0.86);
-    --border: rgba(255, 255, 255, 0.1);
-    --border-strong: rgba(255, 255, 255, 0.22);
-    --highlight: rgba(255, 255, 255, 0.09);
-    --text: #F6F3EF;
-    --text-muted: rgba(246, 243, 239, 0.6);
+    --surface: rgba(20, 20, 20, 0.6);
+    --surface-sunken: rgba(255, 255, 255, 0.045);
+    --surface-strong: rgba(255, 255, 255, 0.09);
+    --surface-solid: rgba(24, 24, 24, 0.92);
+    --border: rgba(255, 255, 255, 0.085);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --rim: rgba(255, 255, 255, 0.075);
+    --highlight: rgba(255, 255, 255, 0.05);
+    --text: #EDEDEB;
+    --text-muted: #A9A9A5;
+    --text-faint: #8E8E8A;
 
-    --accent-rgb: 92 157 255;
-    --accent-hover: #7AB0FF;
-    --accent-fg: #FFFFFF;
-    --accent-subtle: rgba(92, 157, 255, 0.16);
+    --accent-rgb: 237 237 235;
+    --accent-hover: #FFFFFF;
+    --accent-fg: #111111;
+    --accent-subtle: rgba(255, 255, 255, 0.1);
 
-    --success-rgb: 74 222 160;
-    --success-subtle: rgba(74, 222, 160, 0.14);
-    --warning-rgb: 251 191 84;
-    --warning-subtle: rgba(251, 191, 84, 0.14);
-    --danger-rgb: 251 113 133;
-    --danger-subtle: rgba(251, 113, 133, 0.14);
-    --info-rgb: 125 180 255;
-    --info-subtle: rgba(125, 180, 255, 0.14);
+    --success-rgb: 111 211 176;
+    --success-subtle: rgba(111, 211, 176, 0.13);
+    --warning-rgb: 232 189 98;
+    --warning-subtle: rgba(232, 189, 98, 0.13);
+    --danger-rgb: 242 147 124;
+    --danger-subtle: rgba(242, 147, 124, 0.13);
+    --info-rgb: 156 190 240;
+    --info-subtle: rgba(156, 190, 240, 0.13);
 
-    --ai-chip: #D4BFFF;
-    --ai-chip-bg: rgba(167, 139, 250, 0.16);
+    --ai-chip: #CDBDF5;
+    --ai-chip-bg: rgba(205, 189, 245, 0.13);
 
-    --btn-primary-bg: #F6F3EF;
-    --btn-primary-fg: #161413;
+    --pill: #EDEDEB;
+    --on-pill: #111111;
+    --btn-primary-bg: #EDEDEB;
+    --btn-primary-fg: #111111;
     --btn-primary-hover: #FFFFFF;
-    --btn-secondary-bg: rgba(255, 255, 255, 0.07);
-    --btn-secondary-border: rgba(255, 255, 255, 0.12);
-    --btn-secondary-fg: #F6F3EF;
-    --btn-secondary-hover: rgba(255, 255, 255, 0.13);
+    --btn-secondary-bg: rgba(255, 255, 255, 0.06);
+    --btn-secondary-border: rgba(255, 255, 255, 0.09);
+    --btn-secondary-fg: #EDEDEB;
+    --btn-secondary-hover: rgba(255, 255, 255, 0.11);
+    --seg-active-bg: rgba(255, 255, 255, 0.13);
+    --seg-active-fg: #FFFFFF;
 
-    --input-bg: rgba(255, 255, 255, 0.05);
-    --input-bg-focus: rgba(255, 255, 255, 0.09);
-    --option-bg: #26221F;
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-bg-focus: rgba(255, 255, 255, 0.1);
+    --option-bg: #1C1C1C;
 
-    --shadow-card: 0 1px 0 0 var(--highlight) inset, 0 12px 34px -16px rgba(0, 0, 0, 0.55);
-    --shadow-card-hover: 0 1px 0 0 var(--highlight) inset, 0 26px 50px -20px rgba(0, 0, 0, 0.7);
-    --shadow-popover: 0 1px 0 0 var(--highlight) inset, 0 20px 50px -12px rgba(0, 0, 0, 0.6);
-    --shadow-dialog: 0 1px 0 0 var(--highlight) inset, 0 40px 100px -20px rgba(0, 0, 0, 0.75);
+    --tile-1: #F0F0EE;
+    --tile-2: #D6D6D2;
+    --tile-3: #C2C2BD;
+    --tile-4: #ABABA6;
+    --on-tile: #14202A;
 
-    --scrollbar-thumb: rgba(255, 255, 255, 0.16);
-    --focus-ring: rgba(122, 176, 255, 0.6);
+    --shadow-card: inset 0 0 0 1px var(--rim), 0 1px 0 0 var(--highlight) inset, 0 24px 48px -30px rgba(0, 0, 0, 0.8);
+    --shadow-card-hover: inset 0 0 0 1px var(--border-strong), 0 1px 0 0 var(--highlight) inset, 0 28px 56px -26px rgba(0, 0, 0, 0.85);
+    --shadow-popover: 0 24px 60px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    --shadow-dialog: 0 40px 100px -24px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
-    --scene-top: #1E1A18;
-    --scene-sky-1: #3A3E48;
-    --scene-sky-2: #6C7480;
-    --scene-horizon: #C4895C;
-    --scene-floor: #2A1E18;
-    --scene-glow: rgba(255, 160, 90, 0.5);
-    --scene-glow-2: rgba(255, 110, 80, 0.2);
-    --scene-mullion: rgba(12, 9, 8, 0.34);
-    --scene-vignette: rgba(0, 0, 0, 0.45);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+    --focus-ring: rgba(237, 237, 235, 0.55);
+
+    --bg-base: #0B0B0B;
+    --bg-overlay: linear-gradient(180deg, rgba(11, 11, 11, 0.66) 0%, rgba(11, 11, 11, 0.74) 40%, rgba(11, 11, 11, 0.86) 100%);
+    --bg-vignette: radial-gradient(120% 90% at 50% 30%, transparent 50%, rgba(0, 0, 0, 0.55) 100%);
+    --bg-photo-opacity: 1;
   }
 
   * {
@@ -150,11 +173,12 @@
   }
 
   html {
-    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Urbanist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    background: var(--scene-top);
+    background: var(--bg-base);
   }
 
   body {
@@ -163,55 +187,50 @@
     background: transparent;
     color: var(--text);
     font-family: inherit;
+    font-size: 14px;
     line-height: 1.5;
     overflow-x: clip;
-    letter-spacing: -0.003em;
   }
 
-  /* ---- Ambient scene: sky through tall windows at golden hour ---- */
+  /* ---- Global background photo ----
+     Fixed layer, slightly blurred and scaled (hides edge bleed and the
+     source's modest resolution), under a tonal overlay for legibility. */
   body::before {
     content: '';
     position: fixed;
-    inset: 0;
+    inset: -24px;
     z-index: -2;
     pointer-events: none;
-    background:
-      radial-gradient(70% 38% at 50% 70%, var(--scene-glow), transparent 70%),
-      radial-gradient(45% 30% at 88% 78%, var(--scene-glow-2), transparent 75%),
-      radial-gradient(40% 26% at 10% 74%, var(--scene-glow-2), transparent 75%),
-      linear-gradient(
-        180deg,
-        var(--scene-top) 0%,
-        var(--scene-sky-1) 14%,
-        var(--scene-sky-2) 42%,
-        var(--scene-horizon) 66%,
-        var(--scene-floor) 86%,
-        var(--scene-top) 100%
-      );
-    transition: background 600ms var(--ease-in-out);
+    background-color: var(--bg-base);
+    background-image: url('./assets/bg/living-room-sm.jpg');
+    background-image: image-set(url('./assets/bg/living-room-sm.webp') type('image/webp'), url('./assets/bg/living-room-sm.jpg') type('image/jpeg'));
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    filter: blur(5px) saturate(1.05);
+    opacity: var(--bg-photo-opacity);
+    transform: translateZ(0);
   }
-
-  /* Window mullions + vignette + fine grain */
+  @media (min-width: 768px) {
+    body::before {
+      background-image: url('./assets/bg/living-room.jpg');
+      background-image: image-set(url('./assets/bg/living-room.webp') type('image/webp'), url('./assets/bg/living-room.jpg') type('image/jpeg'));
+      filter: blur(3px) saturate(1.05);
+    }
+  }
   body::after {
     content: '';
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      radial-gradient(120% 90% at 50% 45%, transparent 55%, var(--scene-vignette) 100%),
-      linear-gradient(180deg, var(--scene-mullion) 0 7%, transparent 7% 93%, var(--scene-mullion) 93% 100%),
-      repeating-linear-gradient(
-        90deg,
-        transparent 0 calc(20% - 7px),
-        var(--scene-mullion) calc(20% - 7px) 20%
-      ),
-      linear-gradient(180deg, transparent 49.4%, var(--scene-mullion) 49.4% 50.6%, transparent 50.6%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background: var(--bg-vignette), var(--bg-overlay);
+    transition: background 500ms var(--ease-in-out);
   }
 
   h1, h2, h3 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
+    font-weight: 600;
   }
 
   .tnum {
@@ -256,6 +275,81 @@
   .glass-pill:active {
     scale: 0.96;
   }
+}
+
+@layer components {
+  /* Card title (Corbel .card__title): sentence case, 15px semibold */
+  .card-title {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  /* Display page title (Corbel .head__title) */
+  .page-title {
+    font-size: clamp(26px, 1.6vw + 14px, 36px);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  /* Graded KPI tiles: light neutral ramp with dark ink.
+     Tokens are re-scoped so everything inside reads correctly. */
+  .kpi-tile {
+    --text: var(--on-tile);
+    --text-muted: rgba(20, 32, 42, 0.62);
+    --text-faint: rgba(20, 32, 42, 0.5);
+    --border: rgba(20, 32, 42, 0.12);
+    --border-strong: rgba(20, 32, 42, 0.22);
+    --surface-sunken: rgba(20, 32, 42, 0.06);
+    --surface-strong: rgba(20, 32, 42, 0.1);
+    --success-rgb: 18 120 88;
+    --danger-rgb: 184 64 40;
+    --warning-rgb: 150 96 8;
+    --info-rgb: 40 88 160;
+    --accent-rgb: 20 32 42;
+    background-color: var(--tile-1) !important;
+    color: var(--on-tile);
+    border-color: transparent !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 18px 36px -24px rgba(0, 0, 0, 0.6) !important;
+  }
+  .kpi-tile:nth-child(4n + 2) { background-color: var(--tile-2) !important; }
+  .kpi-tile:nth-child(4n + 3) { background-color: var(--tile-3) !important; }
+  .kpi-tile:nth-child(4n + 4) { background-color: var(--tile-4) !important; }
+
+  /* Utility dock (Corbel .dock) */
+  .dock {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.086), 0 20px 40px -18px rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+  html:not(.dark) .dock {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 0 1px rgba(17, 17, 17, 0.08), 0 20px 40px -18px rgba(40, 30, 20, 0.35);
+  }
+
+  /* Primary tab bar (Corbel .tabs) */
+  .tabbar {
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: inset 0 0 0 1px var(--rim);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    backdrop-filter: blur(16px) saturate(130%);
+  }
+  html:not(.dark) .tabbar {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Light-pill primary actions keep legible ink */
+.bg-accent.text-white,
+.bg-accent .text-white {
+  color: var(--accent-fg) !important;
 }
 
 /* Every surface-coloured card becomes frosted glass */
@@ -330,7 +424,7 @@ button.rounded-card:active,
   background-color: var(--input-bg);
   border-color: var(--border);
   color: var(--text);
-  border-radius: 12px;
+  border-radius: 14px;
   transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out);
 }
@@ -383,10 +477,10 @@ button.rounded-card:active,
 }
 :where(table thead th) {
   color: var(--text-muted);
-  font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
   border-color: var(--border);
   background-color: var(--surface-sunken);
 }

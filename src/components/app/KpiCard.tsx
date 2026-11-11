@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowUpRight, TrendingUp, TrendingDown } from 'lucide-react'
+import { ArrowUpRight, ArrowUp, ArrowDown, Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export interface KpiCardProps {
@@ -43,58 +43,56 @@ export const KpiCard: React.FC<KpiCardProps> = ({
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
       className={cn(
-        'group relative p-5 rounded-card border border-border bg-surface select-none text-left overflow-hidden',
+        'kpi-tile group relative flex flex-col pt-[18px] px-5 pb-4 rounded-card border border-border bg-surface select-none text-left overflow-hidden',
         onClick ? 'cursor-pointer' : '',
         className
       )}
     >
-      <div className="flex items-start justify-between gap-2">
-        {icon ? (
-          <div className="w-9 h-9 rounded-2xl bg-surface-strong border border-border flex items-center justify-center text-text transition-transform duration-300 ease-spring group-hover:scale-110 [&_svg]:w-[18px] [&_svg]:h-[18px]">
-            {icon}
-          </div>
-        ) : (
-          <span className="text-xs font-normal text-text-muted truncate">{label}</span>
-        )}
+      <div className="flex items-center justify-between gap-2">
+        <span className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-text-muted min-w-0">
+          {icon && <span className="shrink-0 text-text-muted [&_svg]:w-4 [&_svg]:h-4">{icon}</span>}
+          <span className="truncate">{label}</span>
+          <Info className="w-3.5 h-3.5 shrink-0 opacity-60" strokeWidth={2} aria-hidden="true" />
+        </span>
         {onClick && (
           <ArrowUpRight
-            className="w-4 h-4 text-text-muted transition-all duration-300 ease-out group-hover:text-text group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            strokeWidth={1.75}
+            className="w-4 h-4 shrink-0 text-text-muted transition-all duration-300 ease-out group-hover:text-text group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            strokeWidth={2}
           />
         )}
       </div>
 
-      {icon && <div className="mt-4 text-xs font-normal text-text-muted truncate">{label}</div>}
-
-      <div className={cn('flex items-baseline justify-between gap-2', icon ? 'mt-1' : 'mt-3')}>
-        <div className="font-display text-[26px] leading-8 font-semibold tracking-tight text-text tnum">
-          {value}
-        </div>
+      <div className="mt-2.5 font-display text-[30px] leading-9 font-semibold tracking-[-0.02em] text-text tnum">
+        {value}
       </div>
 
-      {(trendText || target || subtext) && (
-        <div className="mt-3 flex items-center justify-between gap-2 text-xs text-text-muted">
-          {trendText && (
-            <span
-              className={cn(
-                'inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[11px] font-medium',
-                isPos === true
-                  ? 'text-success bg-success/10 border-success/25'
-                  : isPos === false
-                  ? 'text-danger bg-danger/10 border-danger/25'
-                  : 'text-text-muted bg-surface-sunken border-border'
-              )}
-            >
-              {isPos === true ? (
-                <TrendingUp className="w-3 h-3" strokeWidth={2} />
-              ) : isPos === false ? (
-                <TrendingDown className="w-3 h-3" strokeWidth={2} />
-              ) : null}
-              {trendText}
-            </span>
-          )}
-          {target && <span className="text-text-muted ml-auto truncate">{target}</span>}
-          {subtext && !target && <span className="text-text-muted ml-auto truncate">{subtext}</span>}
+      {trendText && (
+        <div className="mt-1.5 flex items-center gap-2 text-[12.5px] text-text-muted">
+          <span
+            className={cn(
+              'inline-flex items-center gap-1 h-6 px-2 rounded-full text-[12px] font-semibold',
+              isPos === true
+                ? 'text-success bg-white/70'
+                : isPos === false
+                ? 'text-danger bg-white/70'
+                : 'text-text-muted bg-white/50'
+            )}
+          >
+            {isPos === true ? (
+              <ArrowUp className="w-3 h-3" strokeWidth={2.5} />
+            ) : isPos === false ? (
+              <ArrowDown className="w-3 h-3" strokeWidth={2.5} />
+            ) : null}
+            {trendText}
+          </span>
+        </div>
+      )}
+
+      {(target || subtext) && (
+        <div className="mt-auto pt-3">
+          <div className="border-t border-dashed border-border pt-2.5 text-[13px] font-medium text-text-muted truncate">
+            {target || subtext}
+          </div>
         </div>
       )}
     </div>

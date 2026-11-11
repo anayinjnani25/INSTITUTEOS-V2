@@ -20,7 +20,7 @@ export const TrainersView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Trainers</h1>
+          <h1 className="page-title">Trainers</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Faculty availability matrices, active cohorts, and workload balancing
           </p>

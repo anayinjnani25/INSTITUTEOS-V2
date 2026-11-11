@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -23,3 +23,12 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: 'true'
+      - name: Publish build preview to ci-dist branch
+        run: |
+          cd dist
+          git init -q -b ci-dist
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "Build preview of ${GITHUB_SHA}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" ci-dist

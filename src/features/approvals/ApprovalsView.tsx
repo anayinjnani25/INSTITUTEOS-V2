@@ -73,7 +73,7 @@ export const ApprovalsView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Approvals</h1>
+          <h1 className="page-title">Approvals</h1>
           <p className="text-xs text-text-muted mt-0.5">
             {pendingCount === 1 ? '1 approval waiting' : `${pendingCount} approvals waiting`} · Explicit review required before outbound dispatch or schedule change
           </p>

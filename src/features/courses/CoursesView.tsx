@@ -117,7 +117,7 @@ export const CoursesView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold text-text">Courses & curricula</h1>
+          <h1 className="page-title">Courses & curricula</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Syllabus structuring, module milestones, and certificate eligibility rules
           </p>
@@ -226,7 +226,7 @@ export const CoursesView: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Syllabus Modules (7 cols) */}
             <div className="lg:col-span-7 space-y-2.5">
-              <h3 className="text-xs font-semibold text-text uppercase tracking-wider">
+              <h3 className="card-title">
                 Syllabus modules
               </h3>
 
@@ -262,7 +262,7 @@ export const CoursesView: React.FC = () => {
 
             {/* Completion Rules Builder (5 cols) */}
             <div className="lg:col-span-5 space-y-2.5">
-              <h3 className="text-xs font-semibold text-text uppercase tracking-wider">
+              <h3 className="card-title">
                 Completion benchmarks
               </h3>
 

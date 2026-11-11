@@ -68,7 +68,7 @@ export const SettingsView: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight text-text">Settings & governance</h1>
+          <h1 className="page-title">Settings & governance</h1>
           <p className="text-xs text-text-muted mt-0.5">
             Operational thresholds, role permissions, data privacy guardrails and quiet hours
           </p>
@@ -101,7 +101,7 @@ export const SettingsView: React.FC = () => {
           onClick={() => setActiveSubTab('attendance_rules')}
           className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'attendance_rules'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
@@ -111,7 +111,7 @@ export const SettingsView: React.FC = () => {
           onClick={() => setActiveSubTab('fees_rules')}
           className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'fees_rules'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
@@ -121,7 +121,7 @@ export const SettingsView: React.FC = () => {
           onClick={() => setActiveSubTab('permissions')}
           className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'permissions'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
@@ -131,7 +131,7 @@ export const SettingsView: React.FC = () => {
           onClick={() => setActiveSubTab('governance')}
           className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'governance'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
@@ -141,7 +141,7 @@ export const SettingsView: React.FC = () => {
           onClick={() => setActiveSubTab('notifications')}
           className={`py-2 px-3 rounded-full border-0 h-8 flex items-center transition-colors whitespace-nowrap ${
             activeSubTab === 'notifications'
-              ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] font-medium shadow-[0_4px_14px_-6px_rgba(0,0,0,0.5)]'
+              ? 'bg-[var(--seg-active-bg)] text-[var(--seg-active-fg)] font-semibold shadow-[inset_0_0_0_1px_var(--rim)]'
               : 'text-text-muted hover:text-text hover:bg-surface-strong'
           }`}
         >
