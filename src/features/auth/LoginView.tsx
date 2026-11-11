@@ -78,7 +78,7 @@ export const LoginView: React.FC = () => {
       email: 'accounts@codecraft.ac.in',
       role: 'accounts' as UserRole,
       badge: 'Accounts Head',
-      badgeColor: 'bg-cyan-500/10 text-cyan-700 border-cyan-500/20',
+      badgeColor: 'bg-cyan-500/10 text-cyan-500 dark:text-cyan-300 border-cyan-500/20',
       avatar: '💼',
       desc: 'Financial ledger, fee payment extraction, and banking reconciliation',
     },
@@ -169,9 +169,9 @@ export const LoginView: React.FC = () => {
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-12 text-text select-none font-sans">
       {/* Left Brand Panel (5 cols) */}
-      <div className="md:col-span-5 border-r border-border bg-black/10 backdrop-blur-sm p-8 md:p-12 flex flex-col justify-between text-text">
+      <div className="md:col-span-5 p-8 md:p-12 flex flex-col justify-between text-text io-rise">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-control bg-surface-strong border border-border text-text font-medium text-xs flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB36B] to-[#F2763A] text-white font-semibold text-xs flex items-center justify-center shadow-[0_8px_20px_-8px_rgba(242,118,58,0.8),inset_0_1px_0_rgba(255,255,255,0.35)]">
             IO
           </div>
           <div className="flex flex-col">
@@ -182,16 +182,16 @@ export const LoginView: React.FC = () => {
 
         <div className="space-y-6 my-auto max-w-sm">
           <div>
-            <div className="text-xs text-text-muted uppercase tracking-wider font-normal">
+            <div className="inline-flex items-center gap-2 h-7 px-3 rounded-full glass-pill text-[11px] text-text-muted uppercase tracking-[0.1em] font-medium">
               Student & Faculty Platform
             </div>
-            <h1 className="text-2xl font-semibold text-text tracking-tight mt-2 leading-snug">
+            <h1 className="text-3xl md:text-[34px] md:leading-[42px] font-semibold text-text tracking-tight mt-3">
               Unified classroom learning, attendance, and student governance.
             </h1>
           </div>
 
-          <div className="space-y-3.5 text-xs text-text-muted">
-            <div className="flex items-start gap-2.5">
+          <div className="space-y-2.5 text-xs text-text-muted">
+            <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-surface border border-border">
               <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
                 <span className="font-medium text-text">Single Sign-On with Google: </span>
@@ -199,7 +199,7 @@ export const LoginView: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5">
+            <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-surface border border-border">
               <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
                 <span className="font-medium text-text">Head Admission Approval: </span>
@@ -207,7 +207,7 @@ export const LoginView: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5">
+            <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-surface border border-border">
               <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <div>
                 <span className="font-medium text-text">Zero-reprompt onboarding: </span>
@@ -225,7 +225,7 @@ export const LoginView: React.FC = () => {
 
       {/* Right Login Panel (7 cols) - STRICTLY ONLY "CONTINUE WITH GOOGLE" */}
       <div className="md:col-span-7 p-6 sm:p-10 md:p-16 flex items-center justify-center text-text">
-        <div className="w-full max-w-md space-y-8 text-center sm:text-left">
+        <div className="w-full max-w-md space-y-7 text-center sm:text-left bg-surface border border-border rounded-dialog shadow-dialog p-7 sm:p-9 animate-[io-pop_640ms_cubic-bezier(0.22,1,0.36,1)_120ms_backwards]">
           {/* Header */}
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-sunken border border-border text-xs font-medium text-text-muted">
@@ -246,7 +246,7 @@ export const LoginView: React.FC = () => {
               type="button"
               onClick={handleGoogleClick}
               disabled={isLoading}
-              className="w-full group bg-white hover:bg-surface-strong active:bg-surface-strong text-text hover:text-text border border-border hover:border-border font-medium text-sm py-3 px-4 rounded-2xl shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-center gap-3 cursor-pointer select-none"
+              className="w-full group bg-white hover:bg-white/90 text-[#1B1917] border border-white/40 font-medium text-sm h-12 px-5 rounded-full shadow-[0_10px_30px_-12px_rgba(0,0,0,0.6)] hover:shadow-[0_16px_36px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 ease-out flex items-center justify-center gap-3 cursor-pointer select-none disabled:opacity-70"
             >
               {/* Official Google G Logo */}
               <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
@@ -267,7 +267,7 @@ export const LoginView: React.FC = () => {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                 />
               </svg>
-              <span className="font-semibold text-text text-[14px]">
+              <span className="font-semibold text-[#1B1917] text-[14px]">
                 {isLoading ? 'Connecting to Google...' : 'Continue with Google'}
               </span>
             </button>
@@ -284,7 +284,7 @@ export const LoginView: React.FC = () => {
                 <span className="font-semibold text-text">
                   Demo Accounts (Instant access without approval):
                 </span>
-                <span className="text-[10px] text-success bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
+                <span className="text-[10px] text-success bg-success/10 border border-success/25 px-2 py-0.5 rounded-full font-medium">
                   Pre-approved
                 </span>
               </div>
@@ -395,7 +395,7 @@ export const LoginView: React.FC = () => {
       {/* Google Account Selector Dialog (Modal) */}
       {showAccountModal && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-border overflow-hidden text-text animate-in fade-in zoom-in-95 duration-150">
+          <div className="w-full max-w-md bg-surface rounded-dialog shadow-dialog border border-border overflow-hidden text-text">
             {/* Modal Header */}
             <div className="p-5 border-b border-border flex items-center justify-between">
               <div className="flex items-center gap-2.5">
@@ -524,13 +524,13 @@ export const LoginView: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setIsCustomAccount(false)}
-                    className="px-3 py-2 text-xs font-medium text-text-muted hover:text-text"
+                    className="h-9 px-4 rounded-full text-xs font-medium text-text-muted hover:text-text hover:bg-surface-strong transition-colors"
                   >
                     Back
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-accent hover:brightness-110 text-white font-semibold text-xs rounded-2xl shadow-sm"
+                    className="h-9 px-4 bg-accent hover:brightness-110 text-white font-semibold text-xs rounded-full shadow-[0_8px_22px_-10px_rgb(var(--accent-rgb)/0.9)] transition-all"
                   >
                     Continue with this account
                   </button>

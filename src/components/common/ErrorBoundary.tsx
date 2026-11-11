@@ -30,8 +30,8 @@ export class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-canvas text-text text-center select-none font-sans">
-          <div className="w-14 h-14 rounded-full bg-danger/10 text-danger flex items-center justify-center mb-4">
+        <div className="min-h-screen flex flex-col items-center justify-center p-6 text-text text-center select-none font-sans">
+          <div className="w-16 h-16 rounded-full bg-danger/10 border border-danger/25 text-danger flex items-center justify-center mb-5 shadow-[0_0_40px_-8px_rgb(var(--danger-rgb)/0.5)] io-rise">
             <AlertOctagon className="w-7 h-7" />
           </div>
           <h1 className="text-lg font-semibold tracking-tight text-text">Something went wrong</h1>
@@ -45,7 +45,7 @@ export class ErrorBoundary extends Component<Props, State> {
           )}
           <button
             onClick={this.handleReload}
-            className="mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-control bg-surface border border-border hover:bg-surface-sunken transition-colors text-text shadow-xs"
+            className="mt-5 inline-flex items-center gap-2 h-9 px-4 text-xs font-medium rounded-full glass-pill transition-all text-text shadow-xs"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reload application</span>

@@ -81,26 +81,26 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         {toasts.map((t) => (
           <div
             key={t.id}
-            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-card border shadow-modal bg-surface text-fg text-sm animate-fade-in transition-all ${
+            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-[18px] border glass-strong text-text text-sm animate-[io-pop_440ms_cubic-bezier(0.34,1.56,0.64,1)_backwards] transition-all ${
               t.variant === 'ai'
-                ? 'border-ai/40 bg-ai/5'
+                ? 'border-[#A78BFA]/40'
                 : t.variant === 'success'
-                ? 'border-success/30 bg-success/5'
+                ? 'border-success/35'
                 : t.variant === 'destructive'
-                ? 'border-danger/30 bg-danger/5'
-                : 'border-border bg-surface'
+                ? 'border-danger/35'
+                : 'border-border'
             }`}
           >
             <div className="mt-0.5 shrink-0">
               {t.variant === 'success' && <CheckCircle2 className="w-4 h-4 text-success" />}
               {t.variant === 'destructive' && <AlertCircle className="w-4 h-4 text-danger" />}
-              {t.variant === 'ai' && <div className="w-2 h-2 rounded-full bg-ai animate-ping" />}
-              {t.variant === 'default' && <Info className="w-4 h-4 text-primary" />}
+              {t.variant === 'ai' && <div className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />}
+              {t.variant === 'default' && <Info className="w-4 h-4 text-accent" />}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="font-medium text-xs text-fg leading-tight">{t.title}</div>
+              <div className="font-medium text-xs text-text leading-tight">{t.title}</div>
               {t.description && (
-                <div className="text-[11px] text-fg-muted mt-0.5 leading-snug">{t.description}</div>
+                <div className="text-[11px] text-text-muted mt-0.5 leading-snug">{t.description}</div>
               )}
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
@@ -110,14 +110,14 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                     t.onUndo?.()
                     removeToast(t.id)
                   }}
-                  className="text-xs font-semibold text-primary hover:underline px-1 py-0.5"
+                  className="text-xs font-semibold text-accent hover:underline px-1 py-0.5"
                 >
                   Undo
                 </button>
               )}
               <button
                 onClick={() => removeToast(t.id)}
-                className="text-fg-muted hover:text-fg p-0.5 rounded"
+                className="text-text-muted hover:text-text p-1 rounded-full hover:bg-surface-strong"
                 aria-label="Close notification"
               >
                 <X className="w-3.5 h-3.5" />

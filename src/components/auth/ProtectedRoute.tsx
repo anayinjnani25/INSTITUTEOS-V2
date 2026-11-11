@@ -33,7 +33,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
   if (allowedRoles && !allowedRoles.includes(role)) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center select-none">
-        <div className="w-14 h-14 rounded-full bg-danger/10 text-danger flex items-center justify-center mb-4">
+        <div className="w-16 h-16 rounded-full bg-danger/10 border border-danger/25 text-danger flex items-center justify-center mb-5 shadow-[0_0_40px_-8px_rgb(var(--danger-rgb)/0.5)] io-rise">
           <ShieldAlert className="w-7 h-7" />
         </div>
         <h2 className="text-lg font-semibold text-text">You don't have access to this page</h2>
@@ -42,7 +42,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
         </p>
         <Link
           to={role === 'student' ? '/s' : '/'}
-          className="mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-control bg-surface border border-border hover:bg-surface-sunken transition-colors text-text shadow-xs"
+          className="mt-5 inline-flex items-center gap-2 h-9 px-4 text-xs font-medium rounded-full glass-pill transition-all text-text shadow-xs"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to {role === 'student' ? 'Student Portal' : 'Dashboard'}</span>

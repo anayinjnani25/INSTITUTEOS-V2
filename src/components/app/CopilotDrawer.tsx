@@ -28,7 +28,7 @@ export const CopilotDrawer: React.FC = () => {
       onClick={() => setCopilotOpen(false)}
     >
       <div
-        className="w-full max-w-[440px] h-full bg-surface shadow-2xl border-l border-border animate-slide-in-right flex flex-col"
+        className="w-full max-w-[440px] h-[calc(100%-24px)] my-3 mr-3 rounded-dialog bg-surface shadow-dialog border border-border flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <CopilotView
