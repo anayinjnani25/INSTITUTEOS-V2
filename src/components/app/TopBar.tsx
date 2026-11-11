@@ -67,7 +67,7 @@ export const TopBar: React.FC = () => {
             <span className="w-10 h-10 rounded-[13px] bg-gradient-to-br from-[#FFB36B] to-[#F2763A] text-white font-bold text-[13px] flex items-center justify-center shadow-[0_8px_20px_-10px_rgba(242,118,58,0.9),inset_0_1px_0_rgba(255,255,255,0.35)] transition-transform duration-300 ease-spring group-hover:rotate-[-4deg] group-hover:scale-105">
               IO
             </span>
-            <span className="hidden sm:flex flex-col min-w-0 leading-tight">
+            <span className="hidden sm:flex xl:hidden 2xl:flex flex-col min-w-0 leading-tight">
               <span className="text-[17px] font-bold text-text truncate">CodeCraft Academy</span>
               <span className="text-[12px] font-medium text-text-muted truncate">
                 Institute OS{!isSupabaseConfigured && ' · Demo data'}
@@ -90,7 +90,7 @@ export const TopBar: React.FC = () => {
               title="Branch scope"
             >
               <Building2 className="w-4 h-4" strokeWidth={1.75} />
-              <span className="hidden sm:inline">{branch === 'All' ? 'All branches' : branch}</span>
+              <span className="hidden sm:inline xl:hidden 2xl:inline">{branch === 'All' ? 'All branches' : branch}</span>
               <ChevronDown
                 className={cn('w-3.5 h-3.5 text-text-muted transition-transform duration-200', branchMenuOpen && 'rotate-180')}
                 strokeWidth={1.75}

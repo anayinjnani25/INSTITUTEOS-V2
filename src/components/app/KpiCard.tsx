@@ -70,7 +70,7 @@ export const KpiCard: React.FC<KpiCardProps> = ({
         <div className="mt-1.5 flex items-center gap-2 text-[12.5px] text-text-muted">
           <span
             className={cn(
-              'inline-flex items-center gap-1 h-6 px-2 rounded-full text-[12px] font-semibold',
+              'inline-flex items-start gap-1 min-h-6 py-0.5 px-2 rounded-[12px] text-[12px] leading-[18px] font-semibold',
               isPos === true
                 ? 'text-success bg-white/70'
                 : isPos === false
@@ -79,9 +79,9 @@ export const KpiCard: React.FC<KpiCardProps> = ({
             )}
           >
             {isPos === true ? (
-              <ArrowUp className="w-3 h-3" strokeWidth={2.5} />
+              <ArrowUp className="w-3 h-3 mt-[3px] shrink-0" strokeWidth={2.5} />
             ) : isPos === false ? (
-              <ArrowDown className="w-3 h-3" strokeWidth={2.5} />
+              <ArrowDown className="w-3 h-3 mt-[3px] shrink-0" strokeWidth={2.5} />
             ) : null}
             {trendText}
           </span>

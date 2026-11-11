@@ -20,7 +20,7 @@ const sumBadges = (items: NavItem[]) =>
   items.reduce((n, i) => n + (typeof i.badge === 'number' ? i.badge : i.badge ? 1 : 0), 0)
 
 const tabBase =
-  'relative inline-flex items-center gap-1.5 h-10 px-4 rounded-full text-[13.5px] font-semibold whitespace-nowrap transition-colors duration-200 ease-out select-none'
+  'relative inline-flex items-center gap-1.5 h-10 px-3.5 2xl:px-4 rounded-full text-[13.5px] font-semibold whitespace-nowrap transition-colors duration-200 ease-out select-none'
 const tabActive = 'bg-[var(--pill)] text-[var(--on-pill)] shadow-[0_6px_16px_-8px_rgba(0,0,0,0.6)]'
 const tabIdle = 'text-text hover:bg-surface-strong'
 

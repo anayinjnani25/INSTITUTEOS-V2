@@ -357,6 +357,15 @@
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
 }
+/* Form controls never blur (keeps inline icons above them) */
+.bg-surface:where(input, select, textarea) {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+svg.absolute {
+  z-index: 1;
+}
+
 /* Avoid stacking blurs on nested glass */
 .bg-surface .bg-surface {
   -webkit-backdrop-filter: none;
@@ -466,6 +475,11 @@ button.rounded-card:active,
    Tables
    ========================================================================== */
 
+:where(.rounded-card, .rounded-control, .rounded-2xl, .rounded-dialog):has(> table, > div > table) {
+  background-color: var(--surface);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+}
 :where(table) {
   background-color: transparent;
   color: var(--text);
