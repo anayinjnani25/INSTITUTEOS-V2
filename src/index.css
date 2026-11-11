@@ -321,13 +321,12 @@ button.rounded-card:active,
   box-shadow: var(--shadow-dialog);
 }
 
+@layer base {
 /* ==========================================================================
    Forms
    ========================================================================== */
 
-input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']),
-select,
-textarea {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']), select, textarea) {
   background-color: var(--input-bg);
   border-color: var(--border);
   color: var(--text);
@@ -335,40 +334,31 @@ textarea {
   transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out);
 }
-input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']):hover,
-select:hover,
-textarea:hover {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']), select, textarea):hover {
   border-color: var(--border-strong);
 }
-input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']):focus,
-select:focus,
-textarea:focus {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='color']):not([type='file']), select, textarea):focus {
   background-color: var(--input-bg-focus);
   border-color: rgb(var(--accent-rgb) / 0.6);
   box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / 0.14);
   outline: none;
 }
-input:disabled,
-select:disabled,
-textarea:disabled {
+:where(input, select, textarea):disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
-select option,
-select optgroup {
+:where(select option, select optgroup) {
   background-color: var(--option-bg);
   color: var(--text);
 }
-input::placeholder,
-textarea::placeholder {
+:where(input, textarea)::placeholder {
   color: var(--text-muted);
   opacity: 0.75;
 }
-input[type='checkbox'],
-input[type='radio'] {
+:where(input[type='checkbox'], input[type='radio']) {
   accent-color: rgb(var(--accent-rgb));
 }
-input[type='range'] {
+:where(input[type='range']) {
   accent-color: rgb(var(--accent-rgb));
 }
 .dark input[type='date'],
@@ -382,38 +372,38 @@ input[type='range'] {
    Tables
    ========================================================================== */
 
-table {
+:where(table) {
   background-color: transparent;
   color: var(--text);
   border-collapse: separate;
   border-spacing: 0;
 }
-table thead,
-table thead tr {
-  background-color: transparent !important;
+:where(table thead, table thead tr) {
+  background-color: transparent;
 }
-table thead th {
-  color: var(--text-muted) !important;
+:where(table thead th) {
+  color: var(--text-muted);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-color: var(--border) !important;
+  border-color: var(--border);
   background-color: var(--surface-sunken);
 }
-table tbody tr {
+:where(table tbody tr) {
   border-color: var(--border);
   transition: background-color var(--dur-fast) var(--ease-out);
 }
-table tbody tr:hover {
+:where(table tbody tr):hover {
   background-color: var(--surface-sunken);
 }
-table tbody tr[aria-selected='true'],
-table tbody tr.selected {
+:where(table tbody tr[aria-selected='true'], table tbody tr.selected) {
   background-color: var(--accent-subtle);
 }
-table tbody td {
+:where(table tbody td) {
   border-color: var(--border);
+}
+
 }
 
 /* ==========================================================================
@@ -446,11 +436,11 @@ html:not(.dark) .fixed.inset-0[class*='bg-black'] {
    Links, focus, selection, scrollbars
    ========================================================================== */
 
-main a:not([class*='btn']):not([class*='Button']):not(.rounded-card):not([class*='bg-']) {
+:where(main a:not([class*='btn']):not([class*='Button']):not(.rounded-card):not([class*='bg-'])) {
   color: rgb(var(--accent-rgb));
   transition: color var(--dur-fast) var(--ease-out);
 }
-main a:not([class*='btn']):not([class*='Button']):not(.rounded-card):not([class*='bg-']):hover {
+:where(main a:not([class*='btn']):not([class*='Button']):not(.rounded-card):not([class*='bg-'])):hover {
   color: var(--accent-hover);
 }
 
